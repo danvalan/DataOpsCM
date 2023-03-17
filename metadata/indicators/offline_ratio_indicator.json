@@ -1,0 +1,36 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/indicators/uq4m8i9i22tnp9kg",
+    "dumpTime": "2023-03-17T18:39:23Z",
+    "version": "4",
+    "content": {
+        "id": "uq4m8i9i22tnp9kg",
+        "name": "offline_ratio_indicator",
+        "type": "indicator",
+        "title": "Offline channel ratio",
+        "description": "The ratio of offline transactions and all transactions.",
+        "content": {
+            "metric": "/rest/projects/$projectId/md/metrics?name=offline_ratio_metric",
+            "scale": "standard",
+            "distribution": "uniform",
+            "visualizations": {
+                "areas": true,
+                "dotmap": true,
+                "heatmap": true
+            },
+            "format": {
+                "type": "percentage",
+                "fraction": 1
+            }
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:38Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/indicators/uq4m8i9i22tnp9kg"
+            }
+        ]
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/datasets/g9tbtf7o5d3ov45k",
+    "dumpTime": "2023-03-17T18:39:21Z",
+    "version": "1",
+    "content": {
+        "id": "g9tbtf7o5d3ov45k",
+        "name": "h3_grid_7",
+        "type": "dataset",
+        "title": "Cell edge 1.2 km (5 km2)",
+        "origin": "https://secure.clevermaps.io/rest/projects/elnjullc4ovtfngn/md/datasets?name=h3_grid_7",
+        "ref": {
+            "type": "h3Grid",
+            "resolution": 7,
+            "zoom": {
+                "min": 2,
+                "optimal": 9,
+                "max": 18
+            }
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:34Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/datasets/g9tbtf7o5d3ov45k"
+            }
+        ]
+    }
+}

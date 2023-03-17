@@ -1,0 +1,119 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/datasets/bgfs3ee569ebpfjf",
+    "dumpTime": "2023-03-17T18:39:20Z",
+    "version": "12",
+    "content": {
+        "id": "bgfs3ee569ebpfjf",
+        "name": "customers",
+        "type": "dataset",
+        "title": "Customers",
+        "description": "Customers registered in the loyalty program.",
+        "origin": "https://secure.clevermaps.io/rest/projects/elnjullc4ovtfngn/md/datasets?name=customers",
+        "properties": {
+            "featureTitle": {
+                "type": "property",
+                "value": "customer_id"
+            },
+            "featureSubtitle": {
+                "type": "property",
+                "value": "address"
+            }
+        },
+        "ref": {
+            "type": "dwh",
+            "subtype": "geometryPoint",
+            "h3Geometries": [
+                "h3_grid_6",
+                "h3_grid_7",
+                "h3_grid_8",
+                "h3_grid_9"
+            ],
+            "visualizations": [
+                {
+                    "type": "dotmap"
+                },
+                {
+                    "type": "heatmap"
+                }
+            ],
+            "table": "customers_1",
+            "primaryKey": "customer_id",
+            "categorizable": true,
+            "fullTextIndex": false,
+            "properties": [
+                {
+                    "name": "customer_id",
+                    "title": "Customer ID",
+                    "column": "customer_id",
+                    "type": "integer",
+                    "filterable": false
+                },
+                {
+                    "foreignKey": "zsj_d_dwh",
+                    "name": "neighborhood_code",
+                    "title": "Neighborhood code",
+                    "column": "neighborhood_code",
+                    "type": "string",
+                    "filterable": false
+                },
+                {
+                    "name": "city",
+                    "title": "City",
+                    "column": "city",
+                    "type": "string",
+                    "filterable": false
+                },
+                {
+                    "name": "address",
+                    "title": "Aaddress",
+                    "column": "address",
+                    "type": "string",
+                    "filterable": false
+                },
+                {
+                    "name": "sex",
+                    "title": "Sex",
+                    "column": "sex",
+                    "type": "string",
+                    "filterable": true
+                },
+                {
+                    "name": "age_group",
+                    "title": "Age group",
+                    "column": "age_group",
+                    "type": "string",
+                    "filterable": true
+                },
+                {
+                    "name": "lat",
+                    "title": "Address latitude",
+                    "column": "lat",
+                    "type": "latitude",
+                    "filterable": false
+                },
+                {
+                    "name": "lng",
+                    "title": "Address longitude",
+                    "column": "lng",
+                    "type": "longitude",
+                    "filterable": false
+                }
+            ],
+            "zoom": {
+                "min": 7,
+                "optimal": 9,
+                "max": 18
+            }
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:37Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/datasets/bgfs3ee569ebpfjf"
+            }
+        ]
+    }
+}

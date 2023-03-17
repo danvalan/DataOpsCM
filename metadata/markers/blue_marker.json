@@ -1,0 +1,31 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/markers/lvij592jijj1b7im",
+    "dumpTime": "2023-03-17T18:39:23Z",
+    "version": "1",
+    "content": {
+        "id": "lvij592jijj1b7im",
+        "name": "blue_marker",
+        "type": "marker",
+        "title": "Blue stores",
+        "content": {
+            "style": "marker-blue",
+            "propertyFilters": [
+                {
+                    "propertyName": "store_type",
+                    "value": "Blue",
+                    "operator": "eq"
+                }
+            ]
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:37Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/markers/lvij592jijj1b7im"
+            }
+        ]
+    }
+}

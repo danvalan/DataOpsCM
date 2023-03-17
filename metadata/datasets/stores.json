@@ -1,0 +1,173 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/datasets/aqvtv5keipf8mbm3",
+    "dumpTime": "2023-03-17T18:39:22Z",
+    "version": "5",
+    "content": {
+        "id": "aqvtv5keipf8mbm3",
+        "name": "stores",
+        "type": "dataset",
+        "title": "Stores",
+        "description": "All blue and green stores.",
+        "origin": "https://secure.clevermaps.io/rest/projects/elnjullc4ovtfngn/md/datasets?name=stores",
+        "properties": {
+            "featureTitle": {
+                "type": "function",
+                "value": "concat",
+                "content": [
+                    {
+                        "type": "text",
+                        "value": "Store n."
+                    },
+                    {
+                        "type": "property",
+                        "value": "store_id"
+                    }
+                ]
+            },
+            "featureSubtitle": {
+                "type": "property",
+                "value": "address"
+            },
+            "featureAttributes": [
+                {
+                    "type": "property",
+                    "value": "opening_hours",
+                    "layout": "primary"
+                },
+                {
+                    "type": "property",
+                    "value": "monthly_rent",
+                    "format": {
+                        "type": "number",
+                        "fraction": 0,
+                        "symbol": "CZK"
+                    },
+                    "layout": "primary"
+                },
+                {
+                    "type": "property",
+                    "value": "parking",
+                    "layout": "secondary"
+                },
+                {
+                    "type": "property",
+                    "value": "employees",
+                    "layout": "secondary"
+                },
+                {
+                    "type": "property",
+                    "value": "contact",
+                    "format": {
+                        "type": "email"
+                    },
+                    "layout": "secondary"
+                },
+                {
+                    "type": "property",
+                    "value": "link",
+                    "format": {
+                        "type": "link"
+                    },
+                    "layout": "secondary"
+                }
+            ]
+        },
+        "ref": {
+            "type": "dwh",
+            "subtype": "geometryPoint",
+            "table": "stores_1",
+            "primaryKey": "store_id",
+            "categorizable": true,
+            "fullTextIndex": true,
+            "properties": [
+                {
+                    "name": "store_id",
+                    "title": "Store ID",
+                    "column": "store_id",
+                    "type": "integer",
+                    "filterable": false
+                },
+                {
+                    "name": "address",
+                    "title": "Store address",
+                    "column": "address",
+                    "type": "string",
+                    "filterable": false
+                },
+                {
+                    "name": "store_type",
+                    "title": "Store type",
+                    "column": "store_type",
+                    "type": "string",
+                    "filterable": true
+                },
+                {
+                    "name": "opening_hours",
+                    "title": "Opening hours",
+                    "column": "opening_hours",
+                    "type": "string",
+                    "filterable": true
+                },
+                {
+                    "name": "monthly_rent",
+                    "title": "Monthly rent",
+                    "column": "monthly_rent",
+                    "type": "integer",
+                    "filterable": true
+                },
+                {
+                    "name": "contact",
+                    "title": "Contact email",
+                    "column": "contact",
+                    "type": "string",
+                    "filterable": false
+                },
+                {
+                    "name": "link",
+                    "title": "Store web link",
+                    "column": "link",
+                    "type": "string",
+                    "filterable": false
+                },
+                {
+                    "name": "parking",
+                    "title": "Designated parking lot",
+                    "column": "parking",
+                    "type": "string",
+                    "filterable": true
+                },
+                {
+                    "name": "employees",
+                    "title": "Number of employees",
+                    "column": "employees",
+                    "type": "integer",
+                    "filterable": true
+                },
+                {
+                    "name": "lat",
+                    "title": "Store's latitude",
+                    "column": "lat",
+                    "type": "latitude",
+                    "filterable": false
+                },
+                {
+                    "name": "lng",
+                    "title": "Store's longitude",
+                    "column": "lng",
+                    "type": "longitude",
+                    "filterable": false
+                }
+            ]
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:35Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/datasets/aqvtv5keipf8mbm3"
+            }
+        ]
+    }
+}

@@ -1,0 +1,106 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/dashboards/r7k65jckibqfqgrg",
+    "dumpTime": "2023-03-17T18:39:20Z",
+    "version": "11",
+    "content": {
+        "id": "r7k65jckibqfqgrg",
+        "name": "business_overview_dashboard",
+        "type": "dashboard",
+        "content": {
+            "blockRows": [
+                {
+                    "type": "indicator",
+                    "indicator": "/rest/projects/$projectId/md/indicators?name=customers_indicator",
+                    "indicatorDrill": "/rest/projects/$projectId/md/indicatorDrills?name=empty_indicator_drill",
+                    "layout": "primary"
+                },
+                {
+                    "type": "indicator",
+                    "indicator": "/rest/projects/$projectId/md/indicators?name=turnover_indicator",
+                    "indicatorDrill": "/rest/projects/$projectId/md/indicatorDrills?name=turnover_indicator_drill",
+                    "layout": "primary",
+                    "blockRows": [
+                        {
+                            "type": "distribution"
+                        }
+                    ]
+                },
+                {
+                    "type": "blockRow",
+                    "blocks": [
+                        {
+                            "type": "indicator",
+                            "indicator": "/rest/projects/$projectId/md/indicators?name=online_turnover_indicator",
+                            "indicatorDrill": "/rest/projects/$projectId/md/indicatorDrills?name=empty_indicator_drill",
+                            "layout": "primary"
+                        },
+                        {
+                            "type": "indicator",
+                            "indicator": "/rest/projects/$projectId/md/indicators?name=offline_turnover_indicator",
+                            "indicatorDrill": "/rest/projects/$projectId/md/indicatorDrills?name=empty_indicator_drill",
+                            "layout": "primary"
+                        }
+                    ]
+                },
+                {
+                    "type": "blockRow",
+                    "blocks": [
+                        {
+                            "type": "indicator",
+                            "indicator": "/rest/projects/$projectId/md/indicators?name=online_ratio_indicator",
+                            "indicatorDrill": "/rest/projects/$projectId/md/indicatorDrills?name=empty_indicator_drill",
+                            "layout": "secondary"
+                        },
+                        {
+                            "type": "indicator",
+                            "indicator": "/rest/projects/$projectId/md/indicators?name=offline_ratio_indicator",
+                            "indicatorDrill": "/rest/projects/$projectId/md/indicatorDrills?name=empty_indicator_drill",
+                            "layout": "secondary"
+                        }
+                    ]
+                },
+                {
+                    "type": "indicatorGroup",
+                    "title": "Transactions",
+                    "blockRows": [
+                        {
+                            "type": "indicator",
+                            "indicator": "/rest/projects/$projectId/md/indicators?name=transactions_indicator",
+                            "indicatorDrill": "/rest/projects/$projectId/md/indicatorDrills?name=empty_indicator_drill",
+                            "layout": "primary"
+                        },
+                        {
+                            "type": "indicator",
+                            "indicator": "/rest/projects/$projectId/md/indicators?name=transactions_per_customer_indicator",
+                            "indicatorDrill": "/rest/projects/$projectId/md/indicatorDrills?name=empty_indicator_drill",
+                            "layout": "primary"
+                        },
+                        {
+                            "type": "indicator",
+                            "indicator": "/rest/projects/$projectId/md/indicators?name=average_transaction_indicator",
+                            "indicatorDrill": "/rest/projects/$projectId/md/indicatorDrills?name=empty_indicator_drill",
+                            "layout": "primary"
+                        }
+                    ]
+                },
+                {
+                    "type": "categories",
+                    "title": "Number of customers by sex",
+                    "description": "Number of customers by sex",
+                    "splitProperty": "customers.sex",
+                    "indicator": "/rest/projects/$projectId/md/indicators?name=customers_indicator"
+                }
+            ]
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:39Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/dashboards/r7k65jckibqfqgrg"
+            }
+        ]
+    }
+}

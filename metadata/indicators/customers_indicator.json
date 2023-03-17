@@ -1,0 +1,40 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/indicators/v6m4thtafvh70v5o",
+    "dumpTime": "2023-03-17T18:39:23Z",
+    "version": "5",
+    "content": {
+        "id": "v6m4thtafvh70v5o",
+        "name": "customers_indicator",
+        "type": "indicator",
+        "title": "Number of customers",
+        "description": "Number of customers in the loyalty program",
+        "content": {
+            "metric": "/rest/projects/$projectId/md/metrics?name=customers_metric",
+            "scale": "positive",
+            "distribution": "geometric",
+            "visualizations": {
+                "areas": true,
+                "grid": true,
+                "zones": true,
+                "line": true,
+                "dotmap": true,
+                "heatmap": true
+            },
+            "format": {
+                "type": "number",
+                "fraction": 0,
+                "symbol": ""
+            }
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:38Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/indicators/v6m4thtafvh70v5o"
+            }
+        ]
+    }
+}

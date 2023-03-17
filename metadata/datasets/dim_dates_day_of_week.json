@@ -1,0 +1,73 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/datasets/c351qiobag7eph72",
+    "dumpTime": "2023-03-17T18:39:21Z",
+    "version": "5",
+    "content": {
+        "id": "c351qiobag7eph72",
+        "name": "dim_dates_day_of_week",
+        "type": "dataset",
+        "title": "Day of week",
+        "origin": "https://secure.clevermaps.io/rest/projects/v6g4f86voq8g78h1/md/datasets?name=dim_dates_day_of_week",
+        "properties": {
+            "featureTitle": {
+                "type": "property",
+                "value": "day_of_week_name_en"
+            }
+        },
+        "ref": {
+            "type": "dwh",
+            "subtype": "basic",
+            "table": "dim_dates_day_of_week_1",
+            "primaryKey": "day_of_week_id",
+            "categorizable": false,
+            "fullTextIndex": false,
+            "properties": [
+                {
+                    "name": "day_of_week_id",
+                    "title": "day_of_week_id",
+                    "column": "day_of_week_id",
+                    "type": "integer",
+                    "filterable": false
+                },
+                {
+                    "name": "day_of_week_name_cz",
+                    "title": "day_of_week_name_cz",
+                    "column": "day_of_week_name_cz",
+                    "type": "string",
+                    "filterable": true
+                },
+                {
+                    "name": "day_of_week_name_sk",
+                    "title": "day_of_week_name_sk",
+                    "column": "day_of_week_name_sk",
+                    "type": "string",
+                    "filterable": false
+                },
+                {
+                    "name": "day_of_week_name_en",
+                    "title": "day_of_week_name_en",
+                    "column": "day_of_week_name_en",
+                    "type": "string",
+                    "filterable": false
+                },
+                {
+                    "name": "order_en",
+                    "title": "order_en",
+                    "column": "order_en",
+                    "type": "integer",
+                    "filterable": false
+                }
+            ]
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:33Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/datasets/c351qiobag7eph72"
+            }
+        ]
+    }
+}

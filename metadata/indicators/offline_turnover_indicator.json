@@ -1,0 +1,37 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/indicators/cbg6pfr6b54c0c81",
+    "dumpTime": "2023-03-17T18:39:23Z",
+    "version": "4",
+    "content": {
+        "id": "cbg6pfr6b54c0c81",
+        "name": "offline_turnover_indicator",
+        "type": "indicator",
+        "title": "Offline channel turnover",
+        "description": "Total turnover generated in the offline channel.",
+        "content": {
+            "metric": "/rest/projects/$projectId/md/metrics?name=offline_turnover_metric",
+            "scale": "standard",
+            "distribution": "geometric",
+            "visualizations": {
+                "areas": true,
+                "dotmap": true,
+                "heatmap": true
+            },
+            "format": {
+                "type": "number",
+                "fraction": 0,
+                "symbol": "CZK"
+            }
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:38Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/indicators/cbg6pfr6b54c0c81"
+            }
+        ]
+    }
+}

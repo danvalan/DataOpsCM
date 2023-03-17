@@ -1,0 +1,43 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/datasets/pd8uf5rodundah51",
+    "dumpTime": "2023-03-17T18:39:21Z",
+    "version": "1",
+    "content": {
+        "id": "pd8uf5rodundah51",
+        "name": "kraj-76k1ib",
+        "type": "dataset",
+        "title": "Vector tiles for regions",
+        "origin": "https://secure.clevermaps.io/rest/projects/q1zdp9d0ao78rdv5/md/datasets?name=kraj-76k1ib",
+        "ref": {
+            "type": "vt",
+            "urlTemplate": "https://a.tiles.mapbox.com/v4/cleveranalytics.3wymnr3y/{z}/{x}/{y}.vector.pbf?access_token={token}",
+            "zoom": {
+                "min": 2,
+                "optimal": 6,
+                "max": 18
+            }
+        },
+        "dataSources": [
+            {
+                "licenceHolder": "RUIAN - ČÚZK",
+                "licenceHolderUrl": "http://vdp.cuzk.cz/",
+                "licenceUrl": "https://www.cuzk.cz/Uvod/Produkty-a-sluzby/RUIAN/RUIAN-(1).aspx"
+            },
+            {
+                "licenceHolder": "Czech statistical office",
+                "licenceHolderUrl": "https://www.czso.cz/csu/czso/home",
+                "licenceUrl": "https://www.czso.cz/csu/czso/conditions_for_use_and_further_dissemination"
+            }
+        ],
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:34Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/datasets/pd8uf5rodundah51"
+            }
+        ]
+    }
+}

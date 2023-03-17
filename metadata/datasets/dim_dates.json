@@ -1,0 +1,120 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/datasets/oosomtgcrbu78s0l",
+    "dumpTime": "2023-03-17T18:39:21Z",
+    "version": "5",
+    "content": {
+        "id": "oosomtgcrbu78s0l",
+        "name": "dim_dates",
+        "type": "dataset",
+        "title": "Dates",
+        "origin": "https://secure.clevermaps.io/rest/projects/v6g4f86voq8g78h1/md/datasets?name=dim_dates",
+        "properties": {
+            "featureTitle": {
+                "type": "property",
+                "value": "date_en"
+            }
+        },
+        "ref": {
+            "type": "dwh",
+            "subtype": "date",
+            "table": "dim_dates_1",
+            "primaryKey": "date_iso",
+            "categorizable": false,
+            "fullTextIndex": false,
+            "properties": [
+                {
+                    "name": "date_iso",
+                    "title": "date_iso",
+                    "column": "date_iso",
+                    "type": "date",
+                    "filterable": false
+                },
+                {
+                    "name": "date_cz",
+                    "title": "date_cz",
+                    "column": "date_cz",
+                    "type": "string",
+                    "filterable": false
+                },
+                {
+                    "name": "date_en",
+                    "title": "date_en",
+                    "column": "date_en",
+                    "type": "string",
+                    "filterable": false
+                },
+                {
+                    "name": "day_of_month",
+                    "title": "day_of_month",
+                    "column": "day_of_month",
+                    "type": "integer",
+                    "filterable": false
+                },
+                {
+                    "name": "day_of_quarter",
+                    "title": "day_of_quarter",
+                    "column": "day_of_quarter",
+                    "type": "integer",
+                    "filterable": false
+                },
+                {
+                    "name": "day_of_year",
+                    "title": "day_of_year",
+                    "column": "day_of_year",
+                    "type": "integer",
+                    "filterable": false
+                },
+                {
+                    "foreignKey": "dim_dates_day_of_week",
+                    "name": "day_of_week_id",
+                    "title": "day_of_week_id",
+                    "column": "day_of_week_id",
+                    "type": "integer",
+                    "filterable": false
+                },
+                {
+                    "foreignKey": "dim_dates_1_week",
+                    "name": "cz_week_id",
+                    "title": "cz_week_id",
+                    "column": "cz_week_id",
+                    "type": "string",
+                    "filterable": false
+                },
+                {
+                    "foreignKey": "dim_dates_2_month",
+                    "name": "month_id",
+                    "title": "month_id",
+                    "column": "month_id",
+                    "type": "integer",
+                    "filterable": false
+                },
+                {
+                    "foreignKey": "dim_dates_3_quarter",
+                    "name": "quarter_id",
+                    "title": "quarter_id",
+                    "column": "quarter_id",
+                    "type": "integer",
+                    "filterable": false
+                },
+                {
+                    "foreignKey": "dim_dates_4_year",
+                    "name": "year_id",
+                    "title": "year_id",
+                    "column": "year_id",
+                    "type": "integer",
+                    "filterable": false
+                }
+            ]
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:36Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/datasets/oosomtgcrbu78s0l"
+            }
+        ]
+    }
+}

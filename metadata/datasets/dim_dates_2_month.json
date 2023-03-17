@@ -1,0 +1,122 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/datasets/n53f21cfnnjudmfp",
+    "dumpTime": "2023-03-17T18:39:21Z",
+    "version": "5",
+    "content": {
+        "id": "n53f21cfnnjudmfp",
+        "name": "dim_dates_2_month",
+        "type": "dataset",
+        "title": "Month",
+        "origin": "https://secure.clevermaps.io/rest/projects/v6g4f86voq8g78h1/md/datasets?name=dim_dates_2_month",
+        "properties": {
+            "featureTitle": {
+                "type": "property",
+                "value": "month_of_year_name_en"
+            }
+        },
+        "ref": {
+            "type": "dwh",
+            "subtype": "date",
+            "table": "dim_dates_2_month_1",
+            "primaryKey": "month_id",
+            "categorizable": false,
+            "fullTextIndex": false,
+            "properties": [
+                {
+                    "name": "month_id",
+                    "title": "month_id",
+                    "column": "month_id",
+                    "type": "integer",
+                    "filterable": false
+                },
+                {
+                    "name": "month_of_year",
+                    "title": "month_of_year",
+                    "column": "month_of_year",
+                    "type": "integer",
+                    "filterable": false
+                },
+                {
+                    "name": "month_of_year_name_cz",
+                    "title": "month_of_year_name_cz",
+                    "column": "month_of_year_name_cz",
+                    "type": "string",
+                    "filterable": true
+                },
+                {
+                    "name": "month_of_year_name_sk",
+                    "title": "month_of_year_name_sk",
+                    "column": "month_of_year_name_sk",
+                    "type": "string",
+                    "filterable": false
+                },
+                {
+                    "name": "month_of_year_name_en",
+                    "title": "month_of_year_name_en",
+                    "column": "month_of_year_name_en",
+                    "type": "string",
+                    "filterable": false
+                },
+                {
+                    "name": "month_name_cz",
+                    "title": "month_name_cz",
+                    "column": "month_name_cz",
+                    "type": "string",
+                    "filterable": true
+                },
+                {
+                    "name": "month_name_sk",
+                    "title": "month_name_sk",
+                    "column": "month_name_sk",
+                    "type": "string",
+                    "filterable": false
+                },
+                {
+                    "name": "month_name_en",
+                    "title": "month_name_en",
+                    "column": "month_name_en",
+                    "type": "string",
+                    "filterable": false
+                },
+                {
+                    "name": "month_name_full_cz",
+                    "title": "month_name_full_cz",
+                    "column": "month_name_full_cz",
+                    "type": "string",
+                    "filterable": true
+                },
+                {
+                    "name": "month_name_full_sk",
+                    "title": "month_name_full_sk",
+                    "column": "month_name_full_sk",
+                    "type": "string",
+                    "filterable": false
+                },
+                {
+                    "name": "month_name_full_en",
+                    "title": "month_name_full_en",
+                    "column": "month_name_full_en",
+                    "type": "string",
+                    "filterable": false
+                },
+                {
+                    "name": "month_of_quarter",
+                    "title": "month_of_quarter",
+                    "column": "month_of_quarter",
+                    "type": "integer",
+                    "filterable": false
+                }
+            ]
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:33Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/datasets/n53f21cfnnjudmfp"
+            }
+        ]
+    }
+}

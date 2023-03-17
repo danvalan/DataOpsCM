@@ -1,0 +1,37 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/markerSelectors/vrniohbj9ma9vhqu",
+    "dumpTime": "2023-03-17T18:39:24Z",
+    "version": "4",
+    "content": {
+        "id": "vrniohbj9ma9vhqu",
+        "name": "stores_marker_selector",
+        "type": "markerSelector",
+        "content": {
+            "categories": [
+                {
+                    "dataset": "/rest/projects/$projectId/md/datasets?name=stores",
+                    "markers": [
+                        {
+                            "marker": "/rest/projects/$projectId/md/markers?name=blue_marker",
+                            "visible": true
+                        },
+                        {
+                            "marker": "/rest/projects/$projectId/md/markers?name=green_marker",
+                            "visible": true
+                        }
+                    ]
+                }
+            ]
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:37Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/markerSelectors/vrniohbj9ma9vhqu"
+            }
+        ]
+    }
+}

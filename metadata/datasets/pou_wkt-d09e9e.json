@@ -1,0 +1,43 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/datasets/dj008f2les478m7e",
+    "dumpTime": "2023-03-17T18:39:22Z",
+    "version": "1",
+    "content": {
+        "id": "dj008f2les478m7e",
+        "name": "pou_wkt-d09e9e",
+        "type": "dataset",
+        "title": "Vector tiles pro pou",
+        "origin": "https://secure.clevermaps.io/rest/projects/q1zdp9d0ao78rdv5/md/datasets?name=pou_wkt-d09e9e",
+        "ref": {
+            "type": "vt",
+            "urlTemplate": "https://a.tiles.mapbox.com/v4/cleveranalytics.d09e9e/{z}/{x}/{y}.vector.pbf?access_token={token}",
+            "zoom": {
+                "min": 3,
+                "optimal": 10,
+                "max": 18
+            }
+        },
+        "dataSources": [
+            {
+                "licenceHolder": "RUIAN - ČÚZK",
+                "licenceHolderUrl": "http://vdp.cuzk.cz/",
+                "licenceUrl": "https://www.cuzk.cz/Uvod/Produkty-a-sluzby/RUIAN/RUIAN-(1).aspx"
+            },
+            {
+                "licenceHolder": "Český statistický úřad",
+                "licenceHolderUrl": "https://www.czso.cz/csu/czso/home",
+                "licenceUrl": "https://www.czso.cz/csu/czso/podminky_pro_vyuzivani_a_dalsi_zverejnovani_statistickych_udaju_csu"
+            }
+        ],
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:35Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/datasets/dj008f2les478m7e"
+            }
+        ]
+    }
+}

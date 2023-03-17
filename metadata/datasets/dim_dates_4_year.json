@@ -1,0 +1,52 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/datasets/u9hduf4dfckfg9ee",
+    "dumpTime": "2023-03-17T18:39:21Z",
+    "version": "5",
+    "content": {
+        "id": "u9hduf4dfckfg9ee",
+        "name": "dim_dates_4_year",
+        "type": "dataset",
+        "title": "Year",
+        "origin": "https://secure.clevermaps.io/rest/projects/v6g4f86voq8g78h1/md/datasets?name=dim_dates_4_year",
+        "properties": {
+            "featureTitle": {
+                "type": "property",
+                "value": "year_name"
+            }
+        },
+        "ref": {
+            "type": "dwh",
+            "subtype": "date",
+            "table": "dim_dates_4_year_1",
+            "primaryKey": "year_id",
+            "categorizable": false,
+            "fullTextIndex": false,
+            "properties": [
+                {
+                    "name": "year_id",
+                    "title": "year_id",
+                    "column": "year_id",
+                    "type": "integer",
+                    "filterable": false
+                },
+                {
+                    "name": "year_name",
+                    "title": "year_name",
+                    "column": "year_name",
+                    "type": "string",
+                    "filterable": true
+                }
+            ]
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:33Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/datasets/u9hduf4dfckfg9ee"
+            }
+        ]
+    }
+}

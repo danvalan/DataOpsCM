@@ -1,0 +1,38 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/metrics/af9b6h2623jfrjro",
+    "dumpTime": "2023-03-17T18:39:24Z",
+    "version": "1",
+    "content": {
+        "id": "af9b6h2623jfrjro",
+        "name": "online_turnover_metric",
+        "type": "metric",
+        "content": {
+            "type": "function_sum",
+            "content": [
+                {
+                    "type": "property",
+                    "value": "transactions.amount"
+                }
+            ],
+            "options": {
+                "filterBy": [
+                    {
+                        "property": "transactions.channel",
+                        "value": "Online",
+                        "operator": "eq"
+                    }
+                ]
+            }
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:38Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/metrics/af9b6h2623jfrjro"
+            }
+        ]
+    }
+}

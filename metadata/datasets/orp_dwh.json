@@ -1,0 +1,134 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/datasets/bjd1ljl75nul0pa7",
+    "dumpTime": "2023-03-17T18:39:22Z",
+    "version": "5",
+    "content": {
+        "id": "bjd1ljl75nul0pa7",
+        "name": "orp_dwh",
+        "type": "dataset",
+        "title": "Municipalities with extended competences",
+        "origin": "https://secure.clevermaps.io/rest/projects/q1zdp9d0ao78rdv5/md/datasets?name=orp_dwh",
+        "properties": {
+            "featureTitle": {
+                "type": "property",
+                "value": "nazev"
+            },
+            "featureSubtitle": {
+                "type": "function",
+                "value": "concat",
+                "content": [
+                    {
+                        "type": "text",
+                        "value": "Region "
+                    },
+                    {
+                        "type": "property",
+                        "value": "upper_name"
+                    }
+                ]
+            }
+        },
+        "ref": {
+            "type": "dwh",
+            "subtype": "geometryPolygon",
+            "geometry": "orp-b1qp26",
+            "visualizations": [
+                {
+                    "type": "areas"
+                }
+            ],
+            "table": "orp_dwh_1",
+            "primaryKey": "kod_orp",
+            "categorizable": false,
+            "fullTextIndex": true,
+            "properties": [
+                {
+                    "name": "x_min",
+                    "title": "x_min",
+                    "column": "x_min",
+                    "type": "decimal(19,6)",
+                    "filterable": false
+                },
+                {
+                    "name": "x_max",
+                    "title": "x_max",
+                    "column": "x_max",
+                    "type": "decimal(19,6)",
+                    "filterable": false
+                },
+                {
+                    "name": "y_min",
+                    "title": "y_min",
+                    "column": "y_min",
+                    "type": "decimal(19,6)",
+                    "filterable": false
+                },
+                {
+                    "name": "y_max",
+                    "title": "y_max",
+                    "column": "y_max",
+                    "type": "decimal(19,6)",
+                    "filterable": false
+                },
+                {
+                    "name": "nazev",
+                    "title": "Name",
+                    "column": "nazev",
+                    "type": "string",
+                    "filterable": true
+                },
+                {
+                    "name": "popis",
+                    "title": "Description",
+                    "column": "popis",
+                    "type": "string",
+                    "filterable": false
+                },
+                {
+                    "name": "kod_orp",
+                    "title": "kod_orp",
+                    "column": "kod_orp",
+                    "type": "string",
+                    "filterable": true
+                },
+                {
+                    "foreignKey": "kraj_dwh",
+                    "name": "kod_kraj",
+                    "title": "kod_kraj",
+                    "column": "kod_kraj",
+                    "type": "string",
+                    "filterable": false
+                },
+                {
+                    "name": "upper_name",
+                    "title": "Upper name",
+                    "column": "upper_name",
+                    "type": "string",
+                    "filterable": false
+                }
+            ]
+        },
+        "dataSources": [
+            {
+                "licenceHolder": "RUIAN - ČÚZK",
+                "licenceHolderUrl": "http://vdp.cuzk.cz/",
+                "licenceUrl": "https://www.cuzk.cz/Uvod/Produkty-a-sluzby/RUIAN/RUIAN-(1).aspx"
+            },
+            {
+                "licenceHolder": "Czech statistical office",
+                "licenceHolderUrl": "https://www.czso.cz/csu/czso/home",
+                "licenceUrl": "https://www.czso.cz/csu/czso/conditions_for_use_and_further_dissemination"
+            }
+        ],
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:35Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/datasets/bjd1ljl75nul0pa7"
+            }
+        ]
+    }
+}

@@ -1,0 +1,62 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/indicatorDrills/l0ugqjkevas79s5e",
+    "dumpTime": "2023-03-17T18:39:23Z",
+    "version": "9",
+    "content": {
+        "id": "l0ugqjkevas79s5e",
+        "name": "turnover_indicator_drill",
+        "type": "indicatorDrill",
+        "content": {
+            "blocks": [
+                {
+                    "type": "distribution"
+                },
+                {
+                    "type": "ranking"
+                },
+                {
+                    "type": "timeSeries"
+                },
+                {
+                    "type": "categories",
+                    "title": "Turnover by customer age and sex",
+                    "description": "Turnover by customer age and sex",
+                    "splitProperty": "customers.age_group",
+                    "orderBy": {
+                        "property": "customers.age_group",
+                        "direction": "asc"
+                    },
+                    "dualProperty": "customers.sex",
+                    "label": "Age groups"
+                },
+                {
+                    "type": "categories",
+                    "title": "Turnover by channel",
+                    "description": "Turnover by channel",
+                    "splitProperty": "transactions.channel"
+                },
+                {
+                    "type": "categories",
+                    "title": "Turnover by day of week",
+                    "description": "Turnover by day of week",
+                    "splitProperty": "transactions.day_name",
+                    "orderBy": {
+                        "property": "transactions.day_index",
+                        "direction": "asc"
+                    },
+                    "vertical": true
+                }
+            ]
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:39Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/indicatorDrills/l0ugqjkevas79s5e"
+            }
+        ]
+    }
+}

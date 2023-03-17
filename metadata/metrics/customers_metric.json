@@ -1,0 +1,29 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/metrics/ih1g0ap5agmdinbc",
+    "dumpTime": "2023-03-17T18:39:24Z",
+    "version": "1",
+    "content": {
+        "id": "ih1g0ap5agmdinbc",
+        "name": "customers_metric",
+        "type": "metric",
+        "content": {
+            "type": "function_count",
+            "content": [
+                {
+                    "type": "property",
+                    "value": "customers.customer_id"
+                }
+            ]
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:37Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/metrics/ih1g0ap5agmdinbc"
+            }
+        ]
+    }
+}

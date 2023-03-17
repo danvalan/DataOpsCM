@@ -1,0 +1,119 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/datasets/a6amffgfinar5mu1",
+    "dumpTime": "2023-03-17T18:39:22Z",
+    "version": "5",
+    "content": {
+        "id": "a6amffgfinar5mu1",
+        "name": "pou_dwh",
+        "type": "dataset",
+        "title": "POU",
+        "origin": "https://secure.clevermaps.io/rest/projects/q1zdp9d0ao78rdv5/md/datasets?name=pou_dwh",
+        "properties": {
+            "featureTitle": {
+                "type": "property",
+                "value": "nazev"
+            },
+            "featureSubtitle": {
+                "type": "function",
+                "value": "concat",
+                "content": [
+                    {
+                        "type": "text",
+                        "value": "Region: "
+                    },
+                    {
+                        "type": "property",
+                        "value": "upper_name"
+                    }
+                ]
+            }
+        },
+        "ref": {
+            "type": "dwh",
+            "subtype": "geometryPolygon",
+            "geometry": "pou_wkt-d09e9e",
+            "visualizations": [
+                {
+                    "type": "areas"
+                }
+            ],
+            "table": "pou_dwh_1",
+            "primaryKey": "kod_pou",
+            "categorizable": false,
+            "fullTextIndex": true,
+            "properties": [
+                {
+                    "name": "kod_pou",
+                    "title": "kod_pou",
+                    "column": "kod_pou",
+                    "type": "string",
+                    "filterable": true
+                },
+                {
+                    "name": "nazev",
+                    "title": "nazev",
+                    "column": "nazev",
+                    "type": "string",
+                    "filterable": true
+                },
+                {
+                    "name": "x_min",
+                    "title": "x_min",
+                    "column": "x_min",
+                    "type": "decimal(19,6)",
+                    "filterable": false
+                },
+                {
+                    "name": "x_max",
+                    "title": "x_max",
+                    "column": "x_max",
+                    "type": "decimal(19,6)",
+                    "filterable": false
+                },
+                {
+                    "name": "y_min",
+                    "title": "y_min",
+                    "column": "y_min",
+                    "type": "decimal(19,6)",
+                    "filterable": false
+                },
+                {
+                    "name": "y_max",
+                    "title": "y_max",
+                    "column": "y_max",
+                    "type": "decimal(19,6)",
+                    "filterable": false
+                },
+                {
+                    "name": "upper_name",
+                    "title": "upper_name",
+                    "column": "upper_name",
+                    "type": "string",
+                    "filterable": false
+                }
+            ]
+        },
+        "dataSources": [
+            {
+                "licenceHolder": "RUIAN - ČÚZK",
+                "licenceHolderUrl": "http://vdp.cuzk.cz/",
+                "licenceUrl": "https://www.cuzk.cz/Uvod/Produkty-a-sluzby/RUIAN/RUIAN-(1).aspx"
+            },
+            {
+                "licenceHolder": "Český statistický úřad",
+                "licenceHolderUrl": "https://www.czso.cz/csu/czso/home",
+                "licenceUrl": "https://www.czso.cz/csu/czso/podminky_pro_vyuzivani_a_dalsi_zverejnovani_statistickych_udaju_csu"
+            }
+        ],
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:36Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/datasets/a6amffgfinar5mu1"
+            }
+        ]
+    }
+}

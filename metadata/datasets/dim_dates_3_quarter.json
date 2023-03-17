@@ -1,0 +1,66 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/datasets/ep53n1sihffa7tii",
+    "dumpTime": "2023-03-17T18:39:21Z",
+    "version": "5",
+    "content": {
+        "id": "ep53n1sihffa7tii",
+        "name": "dim_dates_3_quarter",
+        "type": "dataset",
+        "title": "Quarter",
+        "origin": "https://secure.clevermaps.io/rest/projects/v6g4f86voq8g78h1/md/datasets?name=dim_dates_3_quarter",
+        "properties": {
+            "featureTitle": {
+                "type": "property",
+                "value": "quarter_name"
+            }
+        },
+        "ref": {
+            "type": "dwh",
+            "subtype": "date",
+            "table": "dim_dates_3_quarter_1",
+            "primaryKey": "quarter_id",
+            "categorizable": false,
+            "fullTextIndex": false,
+            "properties": [
+                {
+                    "name": "quarter_id",
+                    "title": "quarter_id",
+                    "column": "quarter_id",
+                    "type": "integer",
+                    "filterable": false
+                },
+                {
+                    "name": "quarter_of_year",
+                    "title": "quarter_of_year",
+                    "column": "quarter_of_year",
+                    "type": "integer",
+                    "filterable": false
+                },
+                {
+                    "name": "quarter_of_year_name",
+                    "title": "quarter_of_year_name",
+                    "column": "quarter_of_year_name",
+                    "type": "string",
+                    "filterable": true
+                },
+                {
+                    "name": "quarter_name",
+                    "title": "quarter_name",
+                    "column": "quarter_name",
+                    "type": "string",
+                    "filterable": true
+                }
+            ]
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:33Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/datasets/ep53n1sihffa7tii"
+            }
+        ]
+    }
+}

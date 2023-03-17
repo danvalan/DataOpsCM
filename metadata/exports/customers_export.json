@@ -1,0 +1,29 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/exports/l8kermiffhhosl3i",
+    "dumpTime": "2023-03-17T18:39:22Z",
+    "version": "1",
+    "content": {
+        "id": "l8kermiffhhosl3i",
+        "name": "customers_export",
+        "type": "export",
+        "title": "Customers export",
+        "content": {
+            "properties": [
+                "customers.customer_id",
+                "customers.address",
+                "customers.sex",
+                "customers.age_group"
+            ]
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:39Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/exports/l8kermiffhhosl3i"
+            }
+        ]
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/exports/i30db0bro77f0aq5",
+    "dumpTime": "2023-03-17T18:39:22Z",
+    "version": "1",
+    "content": {
+        "id": "i30db0bro77f0aq5",
+        "name": "stores_export",
+        "type": "export",
+        "title": "Stores export",
+        "content": {
+            "properties": [
+                "stores.store_id",
+                "stores.address",
+                "stores.store_type",
+                "stores.contact",
+                "cast_obec_dwh.nazev",
+                "okres_dwh.nazev",
+                "kraj_dwh.nazev"
+            ]
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:40Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/exports/i30db0bro77f0aq5"
+            }
+        ]
+    }
+}

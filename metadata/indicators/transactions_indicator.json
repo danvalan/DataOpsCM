@@ -1,0 +1,36 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/indicators/h4acc9voiql4v931",
+    "dumpTime": "2023-03-17T18:39:23Z",
+    "version": "4",
+    "content": {
+        "id": "h4acc9voiql4v931",
+        "name": "transactions_indicator",
+        "type": "indicator",
+        "title": "Number of transactions",
+        "description": "Number of transactions done by our customers",
+        "content": {
+            "metric": "/rest/projects/$projectId/md/metrics?name=transactions_metric",
+            "scale": "standard",
+            "distribution": "geometric",
+            "visualizations": {
+                "areas": true,
+                "dotmap": true,
+                "heatmap": true
+            },
+            "format": {
+                "type": "number",
+                "fraction": 0
+            }
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:39Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/indicators/h4acc9voiql4v931"
+            }
+        ]
+    }
+}

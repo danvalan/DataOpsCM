@@ -1,0 +1,37 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/indicators/ssellkqe3rq2hnne",
+    "dumpTime": "2023-03-17T18:39:23Z",
+    "version": "5",
+    "content": {
+        "id": "ssellkqe3rq2hnne",
+        "name": "online_turnover_indicator",
+        "type": "indicator",
+        "title": "Online channel turnover",
+        "description": "Total turnover generated in the online channel.",
+        "content": {
+            "metric": "/rest/projects/$projectId/md/metrics?name=online_turnover_metric",
+            "scale": "heatmap",
+            "distribution": "geometric",
+            "visualizations": {
+                "areas": true,
+                "dotmap": true,
+                "heatmap": true
+            },
+            "format": {
+                "type": "number",
+                "fraction": 0,
+                "symbol": "CZK"
+            }
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:39Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/indicators/ssellkqe3rq2hnne"
+            }
+        ]
+    }
+}

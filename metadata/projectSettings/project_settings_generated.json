@@ -1,0 +1,30 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/projectSettings/nd3mfflm4f52l6g1",
+    "dumpTime": "2023-03-17T18:39:24Z",
+    "version": "1",
+    "content": {
+        "id": "nd3mfflm4f52l6g1",
+        "name": "project_settings_generated",
+        "type": "projectSettings",
+        "description": "This ProjectSettings MD object was created automatically within DB migration v10.0. As a creator a random view creator was chosen.",
+        "content": {
+            "geoSearchProviders": [
+                "Mapbox"
+            ],
+            "allowUnsecuredOrigins": false,
+            "defaultViews": [
+                "/rest/projects/elnjullc4ovtfngn/md/views?name=business_overview_view"
+            ]
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:40Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/projectSettings/nd3mfflm4f52l6g1"
+            }
+        ]
+    }
+}

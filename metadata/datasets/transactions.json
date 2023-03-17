@@ -1,0 +1,118 @@
+{
+    "url": "/rest/projects/h9kacs4ndqvfh176/md/datasets/lm05trj1qso9tc1q",
+    "dumpTime": "2023-03-17T18:39:22Z",
+    "version": "8",
+    "content": {
+        "id": "lm05trj1qso9tc1q",
+        "name": "transactions",
+        "type": "dataset",
+        "title": "Transactions",
+        "description": "Online and offline transactions done by our customers.",
+        "origin": "https://secure.clevermaps.io/rest/projects/elnjullc4ovtfngn/md/datasets?name=transactions",
+        "ref": {
+            "type": "dwh",
+            "subtype": "basic",
+            "table": "transactions_1",
+            "primaryKey": "transaction_id",
+            "categorizable": true,
+            "fullTextIndex": false,
+            "properties": [
+                {
+                    "name": "transaction_id",
+                    "title": "Transaction ID",
+                    "column": "transaction_id",
+                    "type": "integer",
+                    "filterable": false
+                },
+                {
+                    "foreignKey": "customers",
+                    "name": "customer_id",
+                    "title": "Customer ID",
+                    "column": "customer_id",
+                    "type": "integer",
+                    "filterable": false
+                },
+                {
+                    "foreignKey": "stores",
+                    "name": "store_id",
+                    "title": "Store ID",
+                    "column": "store_id",
+                    "type": "integer",
+                    "filterable": false
+                },
+                {
+                    "foreignKey": "dim_dates",
+                    "name": "date",
+                    "title": "Date of the transaction",
+                    "column": "date",
+                    "type": "date",
+                    "filterable": true
+                },
+                {
+                    "name": "amount",
+                    "title": "Amount",
+                    "column": "amount",
+                    "type": "decimal(19,6)",
+                    "filterable": true
+                },
+                {
+                    "name": "day_index",
+                    "title": "Week day index",
+                    "column": "day_index",
+                    "type": "integer",
+                    "filterable": false
+                },
+                {
+                    "name": "day_name",
+                    "title": "Week day",
+                    "column": "day_name",
+                    "type": "string",
+                    "filterable": true
+                },
+                {
+                    "name": "hour",
+                    "title": "Hour index",
+                    "column": "hour",
+                    "type": "integer",
+                    "filterable": false
+                },
+                {
+                    "name": "time_category",
+                    "title": "Time category",
+                    "column": "time_category",
+                    "type": "string",
+                    "filterable": true
+                },
+                {
+                    "name": "channel",
+                    "title": "Channel (online/offline)",
+                    "column": "channel",
+                    "type": "string",
+                    "filterable": true,
+                    "displayOptions": {
+                        "valueOptions": [
+                            {
+                                "value": "Online",
+                                "color": "green"
+                            },
+                            {
+                                "value": "Offline",
+                                "color": "orange"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "accessInfo": {
+            "createdAt": "2023-03-17T16:35:37Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+        },
+        "links": [
+            {
+                "rel": "self",
+                "href": "/rest/projects/h9kacs4ndqvfh176/md/datasets/lm05trj1qso9tc1q"
+            }
+        ]
+    }
+}
