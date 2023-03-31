@@ -15,8 +15,7 @@ jobs:
             mkdir temp
             cd temp
             ls -a
-            projectid=echo ${GITHUB_REF_NAME} | cut -d'/' -f1
-            echo -e "login\nopenProject --project ` `\ndumpProject --skipData" > script.txt
+            echo -e "login\nopenProject --project ${GITHUB_REF_NAME}\ndumpProject --skipData" > script.txt
             cat script.txt
       - name: Show env variables
         run: env
