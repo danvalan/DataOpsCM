@@ -7,6 +7,8 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
+      - name: Show file content
+        run: ls -a
       - name: Run docker CleverMaps
         uses: addnab/docker-run-action@v3
         with:
