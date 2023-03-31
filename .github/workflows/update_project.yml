@@ -8,14 +8,14 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v3
       - name: Get branch name
-        run: echo ${{ env.GITHUB_REF_NAME }}
+        run: echo ${GITHUB_REF_NAME}
       - name: Show file content
         run: | 
             ls -a 
             mkdir temp
             cd temp
-            ls
-            echo -e "login\nopenProject --project ` ${{ env.GITHUB_REF_NAME }} | cut -d'/' -f1`\ndumpProject --skipData" > script.txt
+            ls -a
+            echo -e "login\nopenProject --project ${GITHUB_REF_NAME}\ndumpProject --skipData" > script.txt
             cat script.txt
       - name: Show env variables
         run: env
