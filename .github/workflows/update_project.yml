@@ -23,5 +23,5 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: clevermaps/shell:latest
-          options: --rm --name cm-shell --pull always --volume ${{ github.workspace }}/temp:/work:z -v /temp/script.txt:/script.txt / --env CM_ACCESS_TOKEN=${{ secrets.ACCESSTOKEN }} --cmdfile /script.txt
+          options: --rm --name cm-shell --pull always --volume ${{ github.workspace }}/temp:/work:z -v ${{ github.workspace }}/temp/script.txt:/script.txt / --env CM_ACCESS_TOKEN=${{ secrets.ACCESSTOKEN }} --cmdfile /script.txt
       
