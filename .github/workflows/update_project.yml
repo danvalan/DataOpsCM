@@ -13,7 +13,7 @@ jobs:
             mkdir 'temp'
             cd temp
             ls
-            echo "login \\n openProject --project ` ${{ GITHUB_REF_NAME }} | cut -d'/' -f1` \\n dumpProject --skipData" > script.txt
+            echo "login \\n openProject --project ` ${{ env.GITHUB_REF_NAME }} | cut -d'/' -f1` \\n dumpProject --skipData" > script.txt
             cat script.txt
       - name: Show env variables
         run: env
