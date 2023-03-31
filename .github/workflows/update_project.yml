@@ -7,9 +7,6 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
-      - name: Get project id from branch
-        env: | 
-          echo ${{ GITHUB_REF_NAME }} > cut -d'/' -f1
       - name: Show file content
         run: | 
             ls -a 
@@ -17,6 +14,7 @@ jobs:
             cd temp
             ls
             echo "login \\n openProject --project ` ${{ GITHUB_REF_NAME }} | cut -d'/' -f1` \\n dumpProject --skipData" > script.txt
+            cat script.txt
       - name: Show env variables
         run: env
       - name: Run docker CleverMaps
