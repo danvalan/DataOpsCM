@@ -13,6 +13,7 @@ jobs:
         run: | 
             ls -a 
             mkdir temp
+            chmod 777 temp
             cd temp
             ls -a
             echo -e "login\nopenProject --project ${GITHUB_REF_NAME}\ndumpProject --skipData" > script.txt
