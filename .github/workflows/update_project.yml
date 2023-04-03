@@ -19,6 +19,8 @@ jobs:
             cat script.txt
       - name: Show env variables
         run: env
+      - name: Is temp still present?
+        run: ls -a
       - name: Run docker CleverMaps
         uses: addnab/docker-run-action@v3
         with:
