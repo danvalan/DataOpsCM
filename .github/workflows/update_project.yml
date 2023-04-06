@@ -33,5 +33,5 @@ jobs:
         with:
           python-version: '3.10' 
       - name: run python
-        run: python .githubreplace_content.py ${{ github.workspace }}/temp/${GITHUB_REF_NAME} ${{ github.workspace }}/metadata
+        run: python .github/workflows/replace_content.py ${{ github.workspace }}/temp/${GITHUB_REF_NAME} ${{ github.workspace }}/metadata
       
