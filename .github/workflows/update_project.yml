@@ -4,24 +4,18 @@ jobs:
   run_docker:
     name: run docker container
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
-      - name: Get branch name
-        run: echo ${GITHUB_REF_NAME}
-      - name: Show file content
+      - name: Create temp dir, create dump project script
         run: | 
-            ls -a 
             mkdir temp
             chmod 777 temp
             cd temp
-            ls -a
             echo -e "login\nopenProject --project ${GITHUB_REF_NAME}\ndumpProject --skipData" > script.txt
             cat script.txt
-      - name: Show env variables
-        run: env
-      - name: Is temp still present?
-        run: ls -a
       - name: Run docker CleverMaps
         uses: addnab/docker-run-action@v3
         with:
