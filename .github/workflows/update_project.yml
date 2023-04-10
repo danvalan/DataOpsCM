@@ -1,5 +1,10 @@
+name: Update dev project
+
 on:
   workflow_dispatch:
+env: 
+  CM_PROJECT_ID: echo ${{ GITHUB_REF_NAME }} | cut -d'/' -f1
+  
 jobs:
   update_project_pipeline:
     name: Update project pipeline
