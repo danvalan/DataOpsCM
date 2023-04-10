@@ -2,8 +2,7 @@ name: Update dev project
 
 on:
   workflow_dispatch:
-env: 
-  CM_PROJECT_ID: echo ${{ GITHUB_REF_NAME }} | cut -d'/' -f1
+
   
 jobs:
   update_project_pipeline:
@@ -14,6 +13,10 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
+        
+      - name: Check out the repo
+        env: 
+          CM_PROJECT_ID: echo ${{ GITHUB_REF_NAME }} | cut -d'/' -f1
         
       - name: Create temp dir, create dump project script
         run: | 
