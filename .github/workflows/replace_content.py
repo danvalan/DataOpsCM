@@ -29,6 +29,16 @@ def replace_json_content(source_content, target_content):
     replace_key_from_source(source_content, target_content, "ref")
     return
 
+def printListOfFiles(listOfFiles):
+    for f in listOfFiles:
+        print(f"{os.path.basename(f)}", sep="\n")
+    return
+
+def printListOfTuples(listOfTuples):
+    for target_file, source_file in listOfTuples:
+        print(f"{os.path.basename(source_file)}", sep="\n")
+    return    
+
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("Usage: python replace_content.py [contentTargerPath] [contentSourcePath]")
@@ -62,13 +72,13 @@ if __name__ == "__main__":
             new_files.append(target_path)
 
     print(f"\nJSON files in both {target_path_arg} and {source_path_arg}:")
-    print(*common_files, sep="\n")
+    printListOfTuples(common_files)
 
     print(f"\nJSON removed in {source_path_arg}:")
-    print(*removed_files, sep="\n")
+    printListOfFiles(removed_files)
 
     print(f"\nJSON files new to {target_path_arg}:")
-    print(*new_files, sep="\n")
+    printListOfFiles(new_files)
 
     for target_file, source_file in common_files:
         with open(target_file, "r") as f1:
@@ -89,7 +99,7 @@ if __name__ == "__main__":
 
         with open(target_file, "w") as f:
             json.dump(target_data, f, indent=4)
-            print(f"JSON object of {os.path.basename(source_file)} copied to {os.path.basename(target_file)}")
+            #print(f"JSON object of {os.path.basename(source_file)} copied to {os.path.basename(target_file)}")
 
 
     for new_file in new_files:
@@ -105,7 +115,7 @@ if __name__ == "__main__":
         #print(f"Destionation path {destination}")
         
         shutil.copy(new_file, destination)
-        #print(f"Copied {new_file} to {destination}")
+        print(f"Copied {new_file} to {destination}", sep="\n")
 
    
 

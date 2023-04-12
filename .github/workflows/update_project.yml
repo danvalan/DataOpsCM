@@ -1,5 +1,9 @@
+name: Update dev project
+
 on:
   workflow_dispatch:
+
+  
 jobs:
   update_project_pipeline:
     name: Update project pipeline
@@ -12,12 +16,14 @@ jobs:
         
       - name: Create temp dir, create dump project script
         run: | 
+            CM_PROJECT_ID="${GITHUB_REF_NAME%%/*}"
+            echo ${CM_PROJECT_ID}
             mkdir temp
             chmod 777 temp
             cd temp
-            echo -e "login\nopenProject --project ${GITHUB_REF_NAME}\ndumpProject --skipData" > dumpscript.txt
+            echo -e "login\nopenProject --project ${CM_PROJECT_ID}\ndumpProject --skipData" > dumpscript.txt
             cat dumpscript.txt
-            echo -e "login\nopenProject --project ${GITHUB_REF_NAME}\nrestoreMetadata\npushProject --skipData" > loadscript.txt
+            echo -e "login\nopenProject --project ${CM_PROJECT_ID}\nrestoreMetadata\npushProject --skipData" > loadscript.txt
             cat loadscript.txt
             
       - name: Run docker CleverMaps Shell with dump script
@@ -33,7 +39,7 @@ jobs:
           python-version: '3.10' 
           
       - name: Run replace content python script
-        run: sudo python .github/workflows/replace_content.py ${{ github.workspace }}/temp/${GITHUB_REF_NAME} ${{ github.workspace }}/metadata
+        run: sudo python .github/workflows/replace_content.py ${{ github.workspace }}/temp/${CM_PROJECT_ID} ${{ github.workspace }}/metadata
         
       - name: Run docker CleverMaps Shell with load script
         uses: addnab/docker-run-action@v3
