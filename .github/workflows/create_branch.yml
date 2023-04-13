@@ -27,5 +27,5 @@ jobs:
             mkdir temp
             chmod 777 temp
             cd temp
-            echo -e "login\ncreateProject --title ${GITHUB_REF_NAME}\ndumpProject --skipData" > dumpscript.txt
-            cat dumpscript.txt
+            echo -e "login\ncreateProject --title ${INPUT_PROJECTNAME}\ndumpProject --skipData" > createProjectScript.txt
+            cat createProjectScript.txt
