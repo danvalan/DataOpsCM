@@ -50,7 +50,8 @@ jobs:
       - name: Get projectId
         run: | 
             cd temp
-            NEW_PROJECT_ID= $(ls)
+            rm createProjectScript.txt
+            NEW_PROJECT_ID= "$(ls)"
       - name: Create branch
         run: | 
             git config user.name github-actions
