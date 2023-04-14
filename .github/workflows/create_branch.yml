@@ -41,3 +41,21 @@ jobs:
             cd temp
             echo -e "login\ncreateProject --title \"${{inputs.projectName}}\" --organizationId ${vars.CM_ORGANIZATION_ID}\ndumpProject --skipData" > createProjectScript.txt
             cat createProjectScript.txt
+      - name: Run docker CleverMaps Shell with create project script
+        uses: addnab/docker-run-action@v3
+        with:
+          image: clevermaps/shell:latest
+          options: --rm --name cm-shell --pull always --volume ${{ github.workspace }}/temp:/work:z -v ${{ github.workspace }}/temp/createProjectScript.txt:/createProjectScript.txt --env CM_ACCESS_TOKEN=${{ secrets.ACCESSTOKEN }} 
+          run: java -jar "${HOME}/${can_shell_filename}" --cmdfile /createProjectScript.txt
+      - name: Get projectId
+        run: | 
+            cd temp
+            NEW_PROJECT_ID= $(ls)
+      - name: Create branch
+        run: | 
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git checkout -b "${NEW_PROJECT_ID}/${{inputs.branchName}}"
+            
+            
+            
