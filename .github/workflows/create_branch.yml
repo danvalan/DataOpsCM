@@ -26,11 +26,13 @@ jobs:
         run: | 
             mkdir temp
             chmod 777 temp
+      - name: Show env variables
+        run: env
       - name: Create temp dir, create create project script without orgId
         if: "${{vars.CM_ORGANIZATION_ID == ''}}"
         run: | 
             cd temp
-            echo -e "login\ncreateProject --title ${INPUT_PROJECTNAME}\ndumpProject --skipData" > createProjectScript.txt
+            echo -e "login\ncreateProject --title ${env.INPUT_PROJECTNAME}\ndumpProject --skipData" > createProjectScript.txt
             cat createProjectScript.txt
       - name: Create temp dir, create create project script with orgId
         if: "${{vars.CM_ORGANIZATION_ID != ''}}"
