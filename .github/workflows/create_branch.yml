@@ -27,7 +27,7 @@ jobs:
             mkdir temp
             chmod 777 temp
       - name: Create temp dir, create create project script with orgId
-        if: ! ${{vars.CM_ORGANIZATION_ID}}
+        if: "! ${{vars.CM_ORGANIZATION_ID}}"
         run: | 
             cd temp
             echo -e "login\ncreateProject --title ${INPUT_PROJECTNAME}\ndumpProject --skipData" > createProjectScript.txt
