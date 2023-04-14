@@ -7,6 +7,7 @@ on:
         description: 'Branch name'
         required: true
         type: string
+        default: 'dev'
       projectName:
         description: 'Project name'
         required: true
@@ -32,11 +33,11 @@ jobs:
         if: "${{vars.CM_ORGANIZATION_ID == ''}}"
         run: | 
             cd temp
-            echo -e "login\ncreateProject --title ${{inputs.projectName}}\ndumpProject --skipData" > createProjectScript.txt
+            echo -e "login\ncreateProject --title \"${{inputs.projectName}}\"\ndumpProject --skipData" > createProjectScript.txt
             cat createProjectScript.txt
       - name: Create temp dir, create create project script with orgId
         if: "${{vars.CM_ORGANIZATION_ID != ''}}"
         run: | 
             cd temp
-            echo -e "login\ncreateProject --title ${INPUT_PROJECTNAME} --organizationId ${vars.CM_ORGANIZATION_ID}\ndumpProject --skipData" > createProjectScript.txt
+            echo -e "login\ncreateProject --title \"${{inputs.projectName}}\" --organizationId ${vars.CM_ORGANIZATION_ID}\ndumpProject --skipData" > createProjectScript.txt
             cat createProjectScript.txt
