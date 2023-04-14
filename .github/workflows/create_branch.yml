@@ -51,12 +51,12 @@ jobs:
         run: | 
             cd temp
             rm createProjectScript.txt
-            NEW_PROJECT_ID="$(ls)"
+            echo "NEW_PROJECT_ID="$(ls)"" >> $GITHUB_ENV
       - name: Create branch
         run: | 
             git config user.name github-actions
             git config user.email github-actions@github.com
-            git checkout -b "${NEW_PROJECT_ID}/${{inputs.branchName}}"
+            git checkout -b "${env.NEW_PROJECT_ID}/${{inputs.branchName}}"
             
             
             
