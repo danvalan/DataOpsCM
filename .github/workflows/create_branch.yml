@@ -60,6 +60,27 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           branch: "refs/heads/${{env.NEW_PROJECT_ID}}/${{inputs.branchName}}"
+      - name: Install jq
+        run: sudo apt-get install -y jq
+      - name: Get bearer token
+        id: get-token
+        run: |
+          refresh_token=${{ secrets.ACCESSTOKEN }}
+
+          response=$(curl -X POST \
+                     "https://secure.clevermaps.io/rest/oauth/token" \
+                     -H "Content-Type: application/json" \
+                     -H "Accept: application/json" \
+                     -d '{"refresh_token": "'"$refresh_token"'"}')
+
+          bearer_token=$(echo "${response}" | jq -r '.access_token')
+
+          # Set the bearer token as an output of the step
+          echo "::set-output name=bearer_token::$bearer_token"
+
+
+   
+    
             
             
             
