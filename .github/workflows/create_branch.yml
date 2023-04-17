@@ -80,7 +80,7 @@ jobs:
                      -H "Accept: application/json" \
                      -d '{"refresh_token": "'"${{ secrets.ACCESSTOKEN }}"'"}')
           echo ${response}
-          bearer_token="$(echo ${response} | jq '.access_token')" >> $GITHUB_OUTPUT 
+          echo "bearer_token="$(echo ${response} | jq '.access_token')"" >> $GITHUB_OUTPUT 
           echo "$bearer_token"
           
       - name: Get account ID
@@ -92,7 +92,7 @@ jobs:
             -H "Authorization: Bearer ${{ steps.get-token.outputs.bearer_token }}" \
             -H "Accept: application/json")
           echo $response
-          account_id="$(echo $response | jq '.id')" >> $GITHUB_OUTPUT 
+          echo "account_id="$(echo $response | jq '.id')"" >> $GITHUB_OUTPUT 
           
       - name: Add user to project
         if: "${{inputs.addUserWithEmail != ''}}"
