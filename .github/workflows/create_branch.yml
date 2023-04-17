@@ -81,7 +81,7 @@ jobs:
                      -d '{"refresh_token": "'"${{ secrets.ACCESSTOKEN }}"'"}')
           echo ${response}
           bearer_token=$(echo "${response}" | jq -r '.access_token')
-          echo ${bearer_token} >> $GITHUB_ENV
+          echo "${bearer_token}" >> $GITHUB_ENV
           
       - name: Get account ID
         if: "${{inputs.addUserWithEmail != ''}}"
