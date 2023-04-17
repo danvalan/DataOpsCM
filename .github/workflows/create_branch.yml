@@ -80,8 +80,8 @@ jobs:
                      -H "Accept: application/json" \
                      -d '{"refresh_token": "'"${{ secrets.ACCESSTOKEN }}"'"}')
           echo ${response}
-          bearer_token="$(echo "${response}" | jq -r '.access_token')" >> $GITHUB_ENV 
-          echo ${{ env.bearer_token }}
+          bearer_token="$(echo ${response} | jq '.access_token')" >> $GITHUB_OUTPUT 
+          echo "$bearer_token"
           
       - name: Get account ID
         if: "${{inputs.addUserWithEmail != ''}}"
@@ -89,12 +89,10 @@ jobs:
         run: |
           response=$(curl -X GET "https://secure.clevermaps.io/rest/accounts?email=${{ inputs.addUserWithEmail }}" \
             -H "Content-Type: application/json" \
-            -H "Authorization: Bearer ${{ env.bearer_token }}" \
+            -H "Authorization: Bearer ${{ steps.get-token.outputs.bearer_token }}" \
             -H "Accept: application/json")
           echo $response
-          account_id=$(echo "$response" | jq -r '.id')
-        env:
-          account_id: ${{ steps.get-account.outputs.account_id }}
+          account_id="$(echo $response | jq '.id')" >> $GITHUB_OUTPUT 
           
       - name: Add user to project
         if: "${{inputs.addUserWithEmail != ''}}"
@@ -103,9 +101,9 @@ jobs:
           response=$(curl -X POST \
                      "https://secure.clevermaps.io/rest/projects/${{env.NEW_PROJECT_ID}}/members" \
                      -H "Content-Type: application/json" \
-                     -H "Authorization: Bearer ${{ env.bearer_token }}" \
+                     -H "Authorization: Bearer ${{ steps.get-token.outputs.bearer_token }}" \
                      -H "Accept: application/json" \
-                     -d '{"accountId": "${{ env.account_id }}", "role": "ADMIN", "status": "ENABLED"}')
+                     -d '{"accountId": "${{ steps.get-account.outputs.account_id }}", "role": "ADMIN", "status": "ENABLED"}')
           echo $response
     
 
