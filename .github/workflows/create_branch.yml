@@ -77,8 +77,9 @@ jobs:
                      -H "Content-Type: application/json" \
                      -H "Accept: application/json" \
                      -d '{"refresh_token": "'"${{ secrets.ACCESSTOKEN }}"'"}')
-
+          echo ${response}
           bearer_token=$(echo "${response}" | jq -r '.access_token')
+          echo ${bearer_token}
         env:
           bearer_token: ${{ steps.get-token.outputs.bearer_token }}
           
