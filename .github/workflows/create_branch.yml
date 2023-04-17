@@ -81,12 +81,13 @@ jobs:
                      -d '{"refresh_token": "'"${{ secrets.ACCESSTOKEN }}"'"}')
           echo ${response}
           bearer_token="$(echo "${response}" | jq -r '.access_token')" >> $GITHUB_ENV 
+          echo ${{ env.bearer_token }}
           
       - name: Get account ID
         if: "${{inputs.addUserWithEmail != ''}}"
         id: get-account
         run: |
-          response=$(curl -s -X GET "https://secure.clevermaps.io/rest/accounts?email=${{ inputs.addUserWithEmail }}" \
+          response=$(curl -X GET "https://secure.clevermaps.io/rest/accounts?email=${{ inputs.addUserWithEmail }}" \
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer ${{ env.bearer_token }}" \
             -H "Accept: application/json")
