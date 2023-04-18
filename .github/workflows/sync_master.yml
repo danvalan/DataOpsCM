@@ -1,0 +1,37 @@
+name: 'Sync master branch'
+
+on:
+#TODO: setup cron job
+  workflow_dispatch:
+
+jobs:
+  syncMaster:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - name: Create temp dir, create dump project script
+        run: | 
+            CM_PROJECT_ID="${GITHUB_REF_NAME%%/*}"
+            echo ${CM_PROJECT_ID}
+            mkdir temp
+            chmod 777 temp
+            cd temp
+            echo -e "login\nopenProject --project ${CM_PROJECT_ID}\ndumpProject --skipData" > dumpscript.txt
+            cat dumpscript.txt
+            
+      - name: Run docker CleverMaps Shell with dump script
+        uses: addnab/docker-run-action@v3
+        with:
+          image: clevermaps/shell:latest
+          options: --rm --name cm-shell --pull always --volume ${{ github.workspace }}/temp:/work:z -v ${{ github.workspace }}/temp/dumpscript.txt:/dumpscript.txt --env CM_ACCESS_TOKEN=${{ secrets.ACCESSTOKEN }} 
+          run: java -jar "${HOME}/${can_shell_filename}" --cmdfile /dumpscript.txt 
+          
+      - name: Setup python environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+      - name: Run replace content python script
+        run: sudo python .github/workflows/sync_master.py ${{ github.workspace }}/metadata ${{ github.workspace }}/temp/${CM_PROJECT_ID}     
