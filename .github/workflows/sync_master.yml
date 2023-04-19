@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Create temp dir, create dump project script
         run: | 
-            CM_PROJECT_ID="${GITHUB_REF_NAME%%/*}"
+            CM_PROJECT_ID="${{var.MASTER_PROJECT}}"
             echo ${CM_PROJECT_ID}
             mkdir temp
             chmod 777 temp
