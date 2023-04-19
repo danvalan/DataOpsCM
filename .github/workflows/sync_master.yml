@@ -13,12 +13,10 @@ jobs:
       - uses: actions/checkout@v3
       - name: Create temp dir, create dump project script
         run: | 
-            CM_PROJECT_ID="${{vars.MASTER_PROJECT}}"
-            echo ${CM_PROJECT_ID}
             mkdir temp
             chmod 777 temp
             cd temp
-            echo -e "login\nopenProject --project ${CM_PROJECT_ID}\ndumpProject --skipData" > dumpscript.txt
+            echo -e "login\nopenProject --project ${{vars.MASTER_PROJECT}}\ndumpProject --skipData" > dumpscript.txt
             cat dumpscript.txt
             
       - name: Run docker CleverMaps Shell with dump script
@@ -34,4 +32,4 @@ jobs:
           python-version: '3.10'
           
       - name: Run replace content python script
-        run: sudo python .github/workflows/sync_master.py ${{ github.workspace }}/metadata ${{ github.workspace }}/temp/${CM_PROJECT_ID}     
+        run: sudo python .github/workflows/sync_master.py ${{ github.workspace }}/metadata ${{ github.workspace }}/temp/${{vars.MASTER_PROJECT}}     
