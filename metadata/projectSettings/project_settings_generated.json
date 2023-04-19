@@ -13,7 +13,7 @@
             ],
             "allowUnsecuredOrigins": false,
             "defaultViews": [
-                "/rest/projects/elnjullc4ovtfngn/md/views?name=business_overview_view"
+                "/rest/projects/$projectId/md/views?name=business_overview_view"
             ]
         },
         "accessInfo": {
