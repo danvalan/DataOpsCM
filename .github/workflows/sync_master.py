@@ -62,12 +62,13 @@ if __name__ == "__main__":
         # with the target directory path in the file path
         new_file_path = str(dump_file)
         new_file_path = new_file_path.replace(dump_path_arg, '')[1:]
+        print(f"New file path {new_file_path}")
         destination = ""
         if ("metadata" not in master_path_arg):
             destination = os.path.join(master_path_arg, 'metadata' , new_file_path)
         else:
             destination = os.path.join(master_path_arg, new_file_path)
-        #print(f"Destionation path {destination}")
+        print(f"Destionation path {destination}")
         
         shutil.copy(dump_file, destination)
         print(f"Copied {dump_file} to {destination}", sep="\n")        
