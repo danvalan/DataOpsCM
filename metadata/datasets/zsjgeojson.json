@@ -1,12 +1,12 @@
 {
     "url": "/rest/projects/h9kacs4ndqvfh176/md/datasets/rf666714n2n0vr3o",
     "dumpTime": "2023-03-17T18:39:22Z",
-    "version": "1",
+    "version": "4",
     "content": {
         "id": "rf666714n2n0vr3o",
         "name": "zsjgeojson",
         "type": "dataset",
-        "title": "Vector tiles pro základní sídelní jednotky",
+        "title": "Vector tiles pro z\u00e1kladn\u00ed s\u00eddeln\u00ed jednotky",
         "origin": "https://secure.clevermaps.io/rest/projects/q1zdp9d0ao78rdv5/md/datasets?name=zsjgeojson",
         "ref": {
             "type": "vt",
@@ -19,7 +19,7 @@
         },
         "dataSources": [
             {
-                "licenceHolder": "RUIAN - ČÚZK",
+                "licenceHolder": "RUIAN - \u010c\u00daZK",
                 "licenceHolderUrl": "http://vdp.cuzk.cz/",
                 "licenceUrl": "https://www.cuzk.cz/Uvod/Produkty-a-sluzby/RUIAN/RUIAN-(1).aspx"
             },
@@ -31,7 +31,9 @@
         ],
         "accessInfo": {
             "createdAt": "2023-03-17T16:35:35Z",
-            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+            "modifiedAt": "2023-04-12T13:54:37Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8",
+            "modifiedBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
         },
         "links": [
             {

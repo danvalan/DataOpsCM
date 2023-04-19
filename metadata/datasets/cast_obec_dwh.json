@@ -1,7 +1,7 @@
 {
     "url": "/rest/projects/h9kacs4ndqvfh176/md/datasets/bks0uf3rf9passnh",
     "dumpTime": "2023-03-17T18:39:20Z",
-    "version": "5",
+    "version": "8",
     "content": {
         "id": "bks0uf3rf9passnh",
         "name": "cast_obec_dwh",
@@ -110,7 +110,7 @@
         },
         "dataSources": [
             {
-                "licenceHolder": "RUIAN - ČÚZK",
+                "licenceHolder": "RUIAN - \u010c\u00daZK",
                 "licenceHolderUrl": "http://vdp.cuzk.cz/",
                 "licenceUrl": "https://www.cuzk.cz/Uvod/Produkty-a-sluzby/RUIAN/RUIAN-(1).aspx"
             },
@@ -122,7 +122,9 @@
         ],
         "accessInfo": {
             "createdAt": "2023-03-17T16:35:36Z",
-            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
+            "modifiedAt": "2023-04-12T13:54:34Z",
+            "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8",
+            "modifiedBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
         },
         "links": [
             {
