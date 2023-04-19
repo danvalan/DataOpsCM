@@ -33,14 +33,23 @@ jobs:
           
       - name: Run replace content python script
         run: sudo python .github/workflows/sync_master.py ${{ github.workspace }}/metadata ${{ github.workspace }}/temp/${{vars.MASTER_PROJECT}}/metadata  
-        
-      - name: Commit changes
+      
+      - name: Remove temp files
         run: |
           sudo rm -r temp
           sudo rm semicolon_delimited_script
+      
+      - name: Are changes present 
+        id: changes_present
+        run: |
+          git status
+          git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
+        
+      - name: Commit changes
+        if: steps.changes_present.outputs.changed == 'true'
+        run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
-          git status
           git commit -m "Automatic synchronization commit of master project"
           git push
