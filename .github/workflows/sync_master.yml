@@ -1,9 +1,9 @@
 name: 'Sync master branch'
 
 on:
-#TODO: setup cron job
   schedule:
     - cron: '0 */2 * * *'
+    # Runs every even hour
 
 jobs:
   syncMaster:
