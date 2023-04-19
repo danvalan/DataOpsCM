@@ -37,11 +37,10 @@ jobs:
       - name: Commit changes
         run: |
           sudo rm -r temp
-          cat semicolon_delimited_script
           sudo rm semicolon_delimited_script
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
           git status
-          #git commit -m "Automatic synchronization commit"
-          #git push
+          git commit -m "Automatic synchronization commit of master project"
+          git push
