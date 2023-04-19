@@ -2,7 +2,8 @@ name: 'Sync master branch'
 
 on:
 #TODO: setup cron job
-  workflow_dispatch:
+  schedule:
+    - cron: '0 */2 * * *'
 
 jobs:
   syncMaster:
