@@ -16,6 +16,11 @@ def printListOfTuples(listOfTuples):
         print(f"{os.path.basename(source_file)}", sep="\n")
     return 
 
+def printListOfFiles(listOfFiles):
+    for f in listOfFiles:
+        print(f"{os.path.basename(f)}", sep="\n")
+    return
+
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("Usage: python sync_master.py [masterBranchPath] [dumpProjectPath]")
@@ -34,14 +39,20 @@ if __name__ == "__main__":
     #print(json_files_dump_paths)
 
     common_files = []
+    removed_files = []
 
     for master_path in json_files_master_paths:
         if os.path.basename(master_path) in [os.path.basename(x) for x in json_files_dump_paths]:
             dump_path = json_files_dump_paths[[os.path.basename(x) for x in json_files_dump_paths].index(os.path.basename(master_path))]
             common_files.append((master_path, dump_path))
+        else:
+            removed_files.append(master_path)
 
     print(f"\nJSON files in both {master_path_arg} and {dump_path_arg}:")
     printListOfTuples(common_files)
+    
+    print(f"\nJSON files removed in {dump_path_arg}:")
+    printListOfFiles(removed_files)
 
     for master_file, dump_file in common_files:
         with open(master_file, "r") as f1:
@@ -58,8 +69,6 @@ if __name__ == "__main__":
 
 
     for dump_file in json_files_dump_paths:
-        # Get the target directory path by replacing the source directory path
-        # with the target directory path in the file path
         new_file_path = str(dump_file)
         new_file_path = new_file_path.replace(dump_path_arg, '')[1:]
         print(f"New file path {new_file_path}")
@@ -71,4 +80,8 @@ if __name__ == "__main__":
         print(f"Destionation path {destination}")
         
         shutil.copy(dump_file, destination)
-        print(f"Copied {dump_file} to {destination}", sep="\n")        
+        print(f"Copied {dump_file} to {destination}", sep="\n")
+        
+    for file_path in removed_files:
+        os.remove(file_path)
+        print(f"Removed {file_path} from master", sep="\n")
