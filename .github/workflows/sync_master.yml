@@ -49,8 +49,9 @@ jobs:
       - name: Commit changes
         if: steps.changes_present.outputs.changed == 'true'
         run: |
+          cur_date=`date +%Y-%m-%d:%T%Z`
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
-          git commit -m "Automatic synchronization commit of master project"
+          git commit -m "Automatic synchronization commit of master project on $cur_date"
           git push
