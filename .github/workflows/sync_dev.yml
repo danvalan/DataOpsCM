@@ -1,0 +1,56 @@
+name: 'Sync dev branch'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  syncDev:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - name: Create temp dir, create dump project script
+        run: | 
+            CM_PROJECT_ID="${GITHUB_REF_NAME%%/*}"
+            mkdir temp
+            chmod 777 temp
+            cd temp
+            echo -e "login\nopenProject --project ${CM_PROJECT_ID}\ndumpProject --skipData" > dumpscript.txt
+            cat dumpscript.txt
+            
+      - name: Run docker CleverMaps Shell with dump script
+        uses: addnab/docker-run-action@v3
+        with:
+          image: clevermaps/shell:latest
+          options: --rm --name cm-shell --pull always --volume ${{ github.workspace }}/temp:/work:z -v ${{ github.workspace }}/temp/dumpscript.txt:/dumpscript.txt --env CM_ACCESS_TOKEN=${{ secrets.ACCESSTOKEN }} 
+          run: java -jar "${HOME}/${can_shell_filename}" --cmdfile /dumpscript.txt 
+          
+      - name: Setup python environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+      - name: Run replace content python script
+        run: sudo python .github/workflows/replace_content.py ${{ github.workspace }}/temp/${{CM_PROJECT_ID}}/metadata ${{ github.workspace }}/metadata
+      
+      - name: Remove temp files
+        run: |
+          sudo rm -r temp
+          sudo rm semicolon_delimited_script
+      
+      - name: Are changes present 
+        id: changes_present
+        run: |
+          git status
+          git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
+        
+      - name: Commit changes
+        if: steps.changes_present.outputs.changed == 'true'
+        run: |
+          cur_date=`date +%Y-%m-%d:%T%Z`
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          #git commit -m "Automatic synchronization commit of project on $cur_date"
+          #git push
