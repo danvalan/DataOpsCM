@@ -1,4 +1,4 @@
-name: Update dev project
+name: 'Update dev project'
 
 on:
   workflow_dispatch:
@@ -11,13 +11,10 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Check out the repo
-        uses: actions/checkout@v3
-        
+      - uses: actions/checkout@v3
       - name: Create temp dir, create dump project script
         run: | 
             CM_PROJECT_ID="${GITHUB_REF_NAME%%/*}"
-            echo ${CM_PROJECT_ID}
             mkdir temp
             chmod 777 temp
             cd temp
@@ -39,7 +36,7 @@ jobs:
           python-version: '3.10' 
           
       - name: Run replace content python script
-        run: sudo python .github/workflows/replace_content.py ${{ github.workspace }}/temp/${CM_PROJECT_ID}/metadata ${{ github.workspace }}/metadata
+        run: sudo python .github/workflows/scripts/replace_content.py ${{ github.workspace }}/temp/${CM_PROJECT_ID}/metadata ${{ github.workspace }}/metadata
         
       - name: Run docker CleverMaps Shell with load script
         uses: addnab/docker-run-action@v3

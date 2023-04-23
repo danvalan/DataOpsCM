@@ -1,4 +1,4 @@
-name: Create new branch
+name: 'Create new branch'
 
 on:
   workflow_dispatch:
@@ -12,7 +12,7 @@ on:
         description: 'Project name'
         required: true
         type: string
-        default: 'DEV branch of project ...'
+        default: 'DEV branch project'
       addUserWithEmail:
         description: 'Add user with email'
         required: false
@@ -29,8 +29,6 @@ jobs:
         run: | 
             mkdir temp
             chmod 777 temp
-      - name: Show env variables
-        run: env
         
       - name: Create temp dir, create create project script without orgId
         if: "${{vars.CM_ORGANIZATION_ID == ''}}"
@@ -50,7 +48,7 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: clevermaps/shell:latest
-          options: --rm --name cm-shell --pull always --volume ${{ github.workspace }}/temp:/work:z -v ${{ github.workspace }}/temp/createProjectScript.txt:/createProjectScript.txt --env CM_ACCESS_TOKEN=${{ secrets.ACCESSTOKEN }} 
+          options: --rm --name cm-shell --pull always --volume ${{ github.workspace }}/temp:/work:z -v ${{ github.workspace }}/temp/createProjectScript.txt:/createProjectScript.txt --env CM_ACCESS_TOKEN=${{ secrets.CM_ACCESS_TOKEN }} 
           run: java -jar "${HOME}/${can_shell_filename}" --cmdfile /createProjectScript.txt
           
       - name: Get projectId
@@ -78,7 +76,7 @@ jobs:
                      "https://secure.clevermaps.io/rest/oauth/token" \
                      -H "Content-Type: application/json" \
                      -H "Accept: application/json" \
-                     -d '{"refresh_token": "'"${{ secrets.ACCESSTOKEN }}"'"}')
+                     -d '{"refresh_token": "'"${{ secrets.CM_ACCESS_TOKEN }}"'"}')
           echo ${response}
           echo "bearer_token="$(echo ${response} | jq '.access_token')"" >> $GITHUB_OUTPUT 
           echo "$bearer_token"
