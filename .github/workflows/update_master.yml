@@ -20,7 +20,7 @@ jobs:
             cd temp
             echo -e "login\nopenProject --project ${{vars.CM_MASTER_PROJECT}}\ndumpProject --skipData" > dumpscript.txt
             cat dumpscript.txt
-            echo -e "login\nopenProject --project ${{vars.CM_MASTER_PROJECT}}\npushProject --skipData" > loadscript.txt
+            echo -e "login\nopenProject --project ${{vars.CM_MASTER_PROJECT}}\nstatus\ndiff\npushProject --skipData" > loadscript.txt
             cat loadscript.txt
             
       - name: Run docker CleverMaps Shell with dump script
