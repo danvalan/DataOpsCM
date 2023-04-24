@@ -83,7 +83,7 @@ def processCommonFiles(common_files):
 
         # Save processed file
         with open(target_file, "w") as f:
-            json.dump(target_data, f, indent=4)
+            json.dump(target_data, f, indent=4, ensure_ascii=False)
         print(f"Copied content of {os.path.basename(target_file)} to dump", sep="\n")    
 
 
