@@ -1,7 +1,7 @@
 {
     "url": "/rest/projects/h9kacs4ndqvfh176/md/datasets/r8evuaukf5ds32na",
     "dumpTime": "2023-03-17T18:39:21Z",
-    "version": "8",
+    "version": "11",
     "content": {
         "id": "r8evuaukf5ds32na",
         "name": "kraj_dwh",
@@ -92,7 +92,7 @@
         },
         "dataSources": [
             {
-                "licenceHolder": "RUIAN - \u010c\u00daZK",
+                "licenceHolder": "RUIAN - ČÚZK",
                 "licenceHolderUrl": "http://vdp.cuzk.cz/",
                 "licenceUrl": "https://www.cuzk.cz/Uvod/Produkty-a-sluzby/RUIAN/RUIAN-(1).aspx"
             },
@@ -104,7 +104,7 @@
         ],
         "accessInfo": {
             "createdAt": "2023-03-17T16:35:34Z",
-            "modifiedAt": "2023-04-12T13:54:38Z",
+            "modifiedAt": "2023-04-24T14:44:58Z",
             "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8",
             "modifiedBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
         },

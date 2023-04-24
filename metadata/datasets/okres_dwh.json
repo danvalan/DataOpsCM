@@ -1,7 +1,7 @@
 {
     "url": "/rest/projects/h9kacs4ndqvfh176/md/datasets/tum6in5n0a1o91c8",
     "dumpTime": "2023-03-17T18:39:22Z",
-    "version": "8",
+    "version": "11",
     "content": {
         "id": "tum6in5n0a1o91c8",
         "name": "okres_dwh",
@@ -110,7 +110,7 @@
         },
         "dataSources": [
             {
-                "licenceHolder": "RUIAN - \u010c\u00daZK",
+                "licenceHolder": "RUIAN - ČÚZK",
                 "licenceHolderUrl": "http://vdp.cuzk.cz/",
                 "licenceUrl": "https://www.cuzk.cz/Uvod/Produkty-a-sluzby/RUIAN/RUIAN-(1).aspx"
             },
@@ -122,7 +122,7 @@
         ],
         "accessInfo": {
             "createdAt": "2023-03-17T16:35:35Z",
-            "modifiedAt": "2023-04-12T13:54:39Z",
+            "modifiedAt": "2023-04-24T14:44:58Z",
             "createdBy": "/rest/accounts/00u116x2t1jQWWp6j0h8",
             "modifiedBy": "/rest/accounts/00u116x2t1jQWWp6j0h8"
         },
