@@ -1,0 +1,47 @@
+name: 'Update master project'
+
+on:
+  workflow_dispatch:
+
+  
+jobs:
+  update_project_pipeline:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    name: Update project pipeline
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - name: Create temp dir, create dump project script
+        run: | 
+            mkdir temp
+            chmod 777 temp
+            cd temp
+            echo -e "login\nopenProject --project ${{vars.CM_MASTER_PROJECT}}\ndumpProject --skipData" > dumpscript.txt
+            cat dumpscript.txt
+            echo -e "login\nopenProject --project ${{vars.CM_MASTER_PROJECT}}\npushProject --skipData" > loadscript.txt
+            cat loadscript.txt
+            
+      - name: Run docker CleverMaps Shell with dump script
+        uses: addnab/docker-run-action@v3
+        with:
+          image: clevermaps/shell:latest
+          options: --rm --name cm-shell --pull always --volume ${{ github.workspace }}/temp:/work:z -v ${{ github.workspace }}/temp/dumpscript.txt:/dumpscript.txt --env CM_ACCESS_TOKEN=${{ secrets.ACCESSTOKEN }} 
+          run: java -jar "${HOME}/${can_shell_filename}" --cmdfile /dumpscript.txt
+          
+      - name: Setup python environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' 
+          
+      - name: Run replace content python script
+        run: sudo python .github/workflows/scripts/replace_content.py ${{ github.workspace }}/temp/${{vars.CM_MASTER_PROJECT}}/metadata ${{ github.workspace }}/metadata
+        
+      - name: Run docker CleverMaps Shell with load script
+        uses: addnab/docker-run-action@v3
+        with:
+          image: clevermaps/shell:latest
+          options: --rm --name cm-shell --pull always --volume ${{ github.workspace }}/temp:/work:z -v ${{ github.workspace }}/temp/loadscript.txt:/loadscript.txt --env CM_ACCESS_TOKEN=${{ secrets.ACCESSTOKEN }} 
+          run: java -jar "${HOME}/${can_shell_filename}" --cmdfile /loadscript.txt
+      
