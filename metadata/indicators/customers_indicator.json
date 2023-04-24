@@ -7,7 +7,7 @@
         "name": "customers_indicator",
         "type": "indicator",
         "title": "Number of customers",
-        "description": "Number of customers in the loyalty program EDITING DESC",
+        "description": "Number of customers in the loyalty program REMOVED TEST",
         "content": {
             "metric": "/rest/projects/$projectId/md/metrics?name=customers_metric",
             "scale": "positive",

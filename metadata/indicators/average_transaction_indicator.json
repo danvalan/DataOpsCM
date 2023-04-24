@@ -7,7 +7,7 @@
         "name": "average_transaction_indicator",
         "type": "indicator",
         "title": "Average transaction",
-        "description": "Average transaction amount",
+        "description": "Average transaction amount EDIT TEST",
         "content": {
             "metric": "/rest/projects/$projectId/md/metrics?name=average_transaction_metric",
             "scale": "standard",
