@@ -99,7 +99,7 @@ def process_common_files(common_files):
 
         # Save processed file
         with open(dev_file, "w") as f:
-            json.dump(dev_file_data, f, indent=4)
+            json.dump(dev_file_data, f, indent=4, ensure_ascii=False)
         print(f"Copied content of {os.path.basename(dev_file)} to dump", sep="\n")    
 
 
@@ -115,7 +115,7 @@ def process_new_files(new_files, metadata_source_path, metadata_target_path):
             destination = os.path.join(metadata_target_path, type_name_sub_path)
 
         with open(destination, "w") as f:
-            json.dump(unwrapped_file_data, f, indent=4)
+            json.dump(unwrapped_file_data, f, indent=4, ensure_ascii=False)
 
         print(f"Unwrapped and copied {os.path.basename(new_file)} to {destination}", sep="\n")
 
