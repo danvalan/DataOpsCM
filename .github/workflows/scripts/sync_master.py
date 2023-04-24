@@ -50,7 +50,7 @@ def synchronize_dump_time(common_files):
             dump_data["dumpTime"] = master_data["dumpTime"]
 
         with open(dump_file, "w") as f:
-            json.dump(dump_data, f, indent=4)
+            json.dump(dump_data, f, indent=4, ensure_ascii=False)
             print(f"Dump time of object {os.path.basename(dump_file)} synchronized with master.")
 
 
