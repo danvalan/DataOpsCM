@@ -12,12 +12,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Create temp dir, create dump project script
+        id: create-temp
         run: | 
-            CM_PROJECT_ID="${GITHUB_REF_NAME%%/*}"
+            echo "CM_PROJECT_ID="${GITHUB_REF_NAME%%/*}"" >> $GITHUB_OUTPUT
+            project_id="${GITHUB_REF_NAME%%/*}"
             mkdir temp
             chmod 777 temp
             cd temp
-            echo -e "login\nopenProject --project ${CM_PROJECT_ID}\ndumpProject --skipData" > dumpscript.txt
+            echo -e "login\nopenProject --project ${project_id}\ndumpProject --skipData" > dumpscript.txt
             cat dumpscript.txt
             
       - name: Run docker CleverMaps Shell with dump script
@@ -33,7 +35,7 @@ jobs:
           python-version: '3.10'
           
       - name: Run replace content python script
-        run: sudo python .github/workflows/scripts/sync_dev.py ${{ github.workspace }}/temp/${{CM_PROJECT_ID}}/metadata ${{ github.workspace }}/metadata
+        run: sudo python .github/workflows/scripts/sync_dev.py ${{ github.workspace }}/temp/${{steps.create-temp.outputs.CM_PROJECT_ID}}/metadata ${{ github.workspace }}/metadata
       
       - name: Remove temp files
         run: |
