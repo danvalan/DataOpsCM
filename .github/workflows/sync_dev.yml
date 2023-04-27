@@ -15,10 +15,11 @@ jobs:
         id: create-temp
         run: | 
             echo "CM_PROJECT_ID="${GITHUB_REF_NAME%%/*}"" >> $GITHUB_OUTPUT
+            project_id="${GITHUB_REF_NAME%%/*}"
             mkdir temp
             chmod 777 temp
             cd temp
-            echo -e "login\nopenProject --project ${CM_PROJECT_ID}\ndumpProject --skipData" > dumpscript.txt
+            echo -e "login\nopenProject --project ${project_id}\ndumpProject --skipData" > dumpscript.txt
             cat dumpscript.txt
             
       - name: Run docker CleverMaps Shell with dump script
