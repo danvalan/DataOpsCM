@@ -18,7 +18,7 @@ jobs:
             mkdir temp
             chmod 777 temp
             cd temp
-            echo -e "login\nopenProject --project ${CM_PROJECT_ID}\ndumpProject --skipData" > dumpscript.txt
+            echo -e "login\nopenProject --project ${{steps.create-temp.outputs.CM_PROJECT_ID}}\ndumpProject --skipData" > dumpscript.txt
             cat dumpscript.txt
             
       - name: Run docker CleverMaps Shell with dump script
