@@ -15,7 +15,7 @@ jobs:
       - name: Create temp dir, create dump project script
         id: create-temp
         run: | 
-            echo"CM_PROJECT_ID="${GITHUB_REF_NAME%%/*}"" >> $GITHUB_OUTPUT
+            echo "CM_PROJECT_ID="${GITHUB_REF_NAME%%/*}"" >> $GITHUB_OUTPUT
             mkdir temp
             chmod 777 temp
             cd temp
