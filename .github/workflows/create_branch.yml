@@ -101,7 +101,7 @@ jobs:
                      -H "Content-Type: application/json" \
                      -H "Authorization: Bearer ${{ steps.get-token.outputs.bearer_token }}" \
                      -H "Accept: application/json" \
-                     -d '{"accountId": "${{ steps.get-account.outputs.account_id }}", "role": "ADMIN", "status": "ENABLED"}')
+                     -d '{"accountId": ${{ steps.get-account.outputs.account_id }}, "role": "ADMIN", "status": "ENABLED"}')
           echo $response
     
 
