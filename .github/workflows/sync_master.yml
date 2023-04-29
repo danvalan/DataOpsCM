@@ -34,7 +34,7 @@ jobs:
         with:
           python-version: '3.10'
           
-      - name: Run replace content python script
+      - name: Run sync dev python script
         run: sudo python .github/workflows/scripts/sync_master.py ${{ github.workspace }}/metadata ${{ github.workspace }}/temp/${{vars.CM_MASTER_PROJECT}}/metadata  
       
       - name: Remove temp files
