@@ -97,7 +97,7 @@ def processNewFiles(new_files, metadata_source_path, metadata_target_path):
         else:
             destination = os.path.join(metadata_target_path, type_name_sub_path)
 
-        shutil.copy(new_file, destination)
+        shutil.copy2(new_file, destination)
         print(f"Copied {new_file} to {destination}", sep="\n")
 
 
