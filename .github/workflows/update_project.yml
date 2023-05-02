@@ -35,8 +35,8 @@ jobs:
       - name: Show all files permissions
         run: |
           ls -l -R
-          chmod -R 777 temp
-          chmod -R 777 metadata
+          sudo chmod -R 777 temp
+          sudo chmod -R 777 metadata
       - name: Setup python environment
         uses: actions/setup-python@v4
         with:
@@ -48,8 +48,8 @@ jobs:
       - name: Show all files permissions
         run: |
           ls -l -R
-          chmod -R 777 temp
-          chmod -R 777 metadata
+          sudo chmod -R 777 temp
+          sudo chmod -R 777 metadata
         
       - name: Run docker CleverMaps Shell with load script
         uses: addnab/docker-run-action@v3
