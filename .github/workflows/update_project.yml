@@ -43,6 +43,9 @@ jobs:
       - name: Run replace content python script
         run: sudo python .github/workflows/scripts/replace_content.py ${{ github.workspace }}/temp/${{steps.create-temp.outputs.CM_PROJECT_ID}}/metadata ${{ github.workspace }}/metadata
         
+      - name: Show all files permissions
+        run: ls -l -R  
+        
       - name: Run docker CleverMaps Shell with load script
         uses: addnab/docker-run-action@v3
         with:
