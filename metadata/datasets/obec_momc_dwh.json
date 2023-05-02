@@ -37,7 +37,6 @@
                     "type": "areas"
                 }
             ],
-            "table": "obec_momc_dwh_1",
             "primaryKey": "kod_momc",
             "categorizable": false,
             "fullTextIndex": true,

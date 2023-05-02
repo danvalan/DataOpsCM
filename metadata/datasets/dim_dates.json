@@ -17,7 +17,6 @@
         "ref": {
             "type": "dwh",
             "subtype": "date",
-            "table": "dim_dates_1",
             "primaryKey": "date_iso",
             "categorizable": false,
             "fullTextIndex": false,
