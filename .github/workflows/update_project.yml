@@ -31,6 +31,9 @@ jobs:
           image: clevermaps/shell:latest
           options: --rm --name cm-shell --pull always --volume ${{ github.workspace }}/temp:/work:z -v ${{ github.workspace }}/temp/dumpscript.txt:/dumpscript.txt --env CM_ACCESS_TOKEN=${{ secrets.CM_ACCESS_TOKEN }}
           run: java -jar "${HOME}/${can_shell_filename}" --cmdfile /dumpscript.txt
+      
+      - name: Show all files permissions
+        run: ls -l -R
           
       - name: Setup python environment
         uses: actions/setup-python@v4
