@@ -34,6 +34,8 @@ jobs:
       
       - name: Show all files permissions
         run: |
+          whoami
+          cat /etc/passwd
           ls -l -R
           sudo chmod -R 777 temp
           sudo chmod -R 777 metadata
