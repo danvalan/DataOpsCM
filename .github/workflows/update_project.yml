@@ -33,8 +33,10 @@ jobs:
           run: java -jar "${HOME}/${can_shell_filename}" --cmdfile /dumpscript.txt
       
       - name: Show all files permissions
-        run: ls -l -R
-          
+        run: |
+          ls -l -R
+          chmod -R 777 temp
+          chmod -R 777 metadata
       - name: Setup python environment
         uses: actions/setup-python@v4
         with:
@@ -44,7 +46,10 @@ jobs:
         run: sudo python .github/workflows/scripts/replace_content.py ${{ github.workspace }}/temp/${{steps.create-temp.outputs.CM_PROJECT_ID}}/metadata ${{ github.workspace }}/metadata
         
       - name: Show all files permissions
-        run: ls -l -R  
+        run: |
+          ls -l -R
+          chmod -R 777 temp
+          chmod -R 777 metadata
         
       - name: Run docker CleverMaps Shell with load script
         uses: addnab/docker-run-action@v3
