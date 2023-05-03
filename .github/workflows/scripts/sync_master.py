@@ -2,6 +2,7 @@ import os
 import shutil
 import sys
 import json
+import script_utils
 
 """
 Script finds and copies metadata files from dump path to master branch path.
@@ -19,24 +20,6 @@ Overview of algorithm:
     5. Process removed files:
         a. delete files in master branch
 """
-
-def find_json_files(path):
-    json_files = []
-    for root, dirs, files in os.walk(path):
-        for file in files:
-            if file.endswith(".json") and file != "dumpMetadata.json":
-                json_files.append(os.path.join(root, file))
-    return json_files
-
-def print_list_of_tuples(list):
-    for target_file, source_file in list:
-        print(f"{os.path.basename(source_file)}", sep="\n")
-    return 
-
-def print_list_of_files(list):
-    for f in list:
-        print(f"{os.path.basename(f)}", sep="\n")
-    return
 
 def synchronize_dump_time(common_files):
     for master_file, dump_file in common_files:
@@ -60,7 +43,7 @@ def copy_dump_files_to_master(dump_files, master_path, dump_path):
         new_file_path = new_file_path.replace(dump_path, '')[1:]
         destination = os.path.join(master_path, new_file_path)
         
-        shutil.copy(dump_file, destination)
+        shutil.copy2(dump_file, destination)
         print(f"Copied {dump_file} to {destination}", sep="\n")
 
 
@@ -80,8 +63,8 @@ if __name__ == "__main__":
 
     # Find json files in master path and dump path (and subdirectories)
 
-    json_files_master_paths = find_json_files(master_path_arg)
-    json_files_dump_paths = find_json_files(dump_path_arg)
+    json_files_master_paths = script_utils.find_json_files(master_path_arg)
+    json_files_dump_paths = script_utils.find_json_files(dump_path_arg)
     
     # Sort files
 

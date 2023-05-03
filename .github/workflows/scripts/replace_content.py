@@ -2,6 +2,7 @@ import os
 import shutil
 import sys
 import json
+import script_utils
 
 """
 Script finds and replaces metadata content from source path to target path.
@@ -23,45 +24,6 @@ Overview of algorithm:
         a. print list of removed files
 """
 
-def find_json_files(path):
-    json_files = []
-    for root, dirs, files in os.walk(path):
-        for file in files:
-            if file.endswith(".json") and file != "dumpMetadata.json":
-                json_files.append(os.path.join(root, file))
-    return json_files
-
-"""
-Sets target value of key to source value.
-If source does not have key and target has key deletes the key from target.
-"""
-def replace_key_from_source(source_content, target_content, key):
-    if (source_content.get(key, None) is None):
-        if (target_content.get(key , None) is not None):
-            del target_content[key]
-    else:
-        target_content[key] = source_content[key]
- 
-
-def replace_json_content(source_content, target_content):
-    target_content["name"] = source_content["name"]
-    target_content["type"] = source_content["type"]
-    replace_key_from_source(source_content, target_content, "title")
-    replace_key_from_source(source_content, target_content, "description")
-    replace_key_from_source(source_content, target_content, "content")
-    replace_key_from_source(source_content, target_content, "ref")
-
-
-def printListOfFiles(listOfFiles):
-    for f in listOfFiles:
-        print(f"{os.path.basename(f)}", sep="\n")
-
-
-def printListOfTuples(listOfTuples):
-    for target_file, source_file in listOfTuples:
-        print(f"{os.path.basename(source_file)}", sep="\n")
-
-
 def processCommonFiles(common_files):
     for target_file, source_file in common_files:
         with open(target_file, "r") as f1:
@@ -72,14 +34,14 @@ def processCommonFiles(common_files):
         # Check if content is wrapped by looking for dumpTime
         if "dumpTime" in target_data:
             if "dumpTime" in source_data:
-                replace_json_content(source_data["content"], target_data["content"])
+                script_utils.replace_json_content(source_data["content"], target_data["content"])
             else:
-                replace_json_content(source_data, target_data["content"])
+                script_utils.replace_json_content(source_data, target_data["content"])
         else:
             if "dumpTime" in source_data:
-                replace_json_content(source_data["content"], target_data)
+                script_utils.replace_json_content(source_data["content"], target_data)
             else:
-                replace_json_content(source_data, target_data)
+                script_utils.replace_json_content(source_data, target_data)
 
         # Save processed file
         with open(target_file, "w") as f:
@@ -100,6 +62,13 @@ def processNewFiles(new_files, metadata_source_path, metadata_target_path):
         shutil.copy2(new_file, destination)
         print(f"Copied {new_file} to {destination}", sep="\n")
 
+def process_remove_files(removed_files):
+    if (removed_files.count == 0): return
+
+    print("Following metadata files are present in DEV project but were removed in repository:\n")
+    script_utils.printListOfFiles(removed_files)
+    print("You can remove them from project using Shell.")
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
@@ -111,8 +80,8 @@ if __name__ == "__main__":
     metadata_target_path_arg = sys.argv[1]
     metadata_source_path_arg = sys.argv[2]
 
-    json_files_target_paths = find_json_files(metadata_target_path_arg)
-    json_files_source_paths = find_json_files(metadata_source_path_arg)
+    json_files_target_paths = script_utils.find_json_files(metadata_target_path_arg)
+    json_files_source_paths = script_utils.find_json_files(metadata_source_path_arg)
 
     print(f"JSON files in {metadata_target_path_arg}:")
     print(json_files_target_paths)
@@ -140,11 +109,6 @@ if __name__ == "__main__":
     # Process sorted files
     processCommonFiles(common_files)
     processNewFiles(new_files, metadata_source_path_arg, metadata_target_path_arg)
-    
-    print("Following metadata files are present in DEV project but were removed in repository:\n")
-    printListOfFiles(removed_files)
-    print("You can remove them from project using Shell.")
-    
-    
+    process_remove_files(removed_files)
 
 
