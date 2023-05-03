@@ -25,6 +25,19 @@ jobs:
             echo -e "login\nopenProject --project ${project_id}\nrestoreMetadata\npushProject --skipData" > loadscript.txt
             cat loadscript.txt
             
+      - name: Debug environment
+        uses: addnab/docker-run-action@v3
+        with:
+          image: clevermaps/shell:beta
+          options: --rm --name cm-shell --pull always --volume ${{ github.workspace }}/temp:/work:z -v ${{ github.workspace }}/temp/dumpscript.txt:/dumpscript.txt --env CM_ACCESS_TOKEN=${{ secrets.CM_ACCESS_TOKEN }} --user 1001:123
+          run: |
+            env
+            echo "$HOME"
+            cd
+            pwd
+            ls -lA
+            cat .cleverMaps/config
+
       - name: Run docker CleverMaps Shell with dump script
         uses: addnab/docker-run-action@v3
         with:
