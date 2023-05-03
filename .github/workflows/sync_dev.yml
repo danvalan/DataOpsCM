@@ -46,6 +46,7 @@ jobs:
         run: |
           sudo rm -r temp
           sudo rm semicolon_delimited_script
+          sudo rm -r .github/workflows/scripts/__pycache__
       
       - name: Are changes present 
         id: changes_present
