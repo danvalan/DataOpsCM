@@ -25,19 +25,14 @@ jobs:
       - name: Run docker CleverMaps Shell with dump script
         uses: addnab/docker-run-action@v3
         with:
-          image: clevermaps/shell:latest
-          options: --rm --name cm-shell --pull always --volume ${{ github.workspace }}/temp:/work:z -v ${{ github.workspace }}/temp/dumpscript.txt:/dumpscript.txt --env CM_ACCESS_TOKEN=${{ secrets.CM_ACCESS_TOKEN }} 
+          image: clevermaps/shell:beta
+          options: --rm --name cm-shell --pull always --volume ${{ github.workspace }}/temp:/work:z -v ${{ github.workspace }}/temp/dumpscript.txt:/dumpscript.txt --env CM_ACCESS_TOKEN=${{ secrets.CM_ACCESS_TOKEN }} --user 1001:123
           run: java -jar "${HOME}/${can_shell_filename}" --cmdfile /dumpscript.txt 
           
       - name: Setup python environment
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-      
-      - name: Add file permissions
-        run: |
-          ls -l -R
-          sudo chmod -R 777 temp
                     
       - name: Run sync dev python script
         run: python .github/workflows/scripts/sync_dev.py ${{ github.workspace }}/metadata ${{ github.workspace }}/temp/${{steps.create-temp.outputs.CM_PROJECT_ID}}/metadata
