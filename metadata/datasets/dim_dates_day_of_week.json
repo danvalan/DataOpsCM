@@ -17,7 +17,6 @@
         "ref": {
             "type": "dwh",
             "subtype": "basic",
-            "table": "dim_dates_day_of_week_1",
             "primaryKey": "day_of_week_id",
             "categorizable": false,
             "fullTextIndex": false,

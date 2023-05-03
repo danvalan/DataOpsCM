@@ -75,7 +75,6 @@
         "ref": {
             "type": "dwh",
             "subtype": "geometryPoint",
-            "table": "stores_1",
             "primaryKey": "store_id",
             "categorizable": true,
             "fullTextIndex": true,

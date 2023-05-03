@@ -37,7 +37,6 @@
                     "type": "areas"
                 }
             ],
-            "table": "orp_dwh_1",
             "primaryKey": "kod_orp",
             "categorizable": false,
             "fullTextIndex": true,

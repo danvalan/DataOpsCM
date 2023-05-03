@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import script_utils
 
 """
 Script finds and replaces metadata content from dump to dev branch.
@@ -24,45 +25,6 @@ Overview of algorithm:
     5. Process removed files:
         a. remove files from dev branch
 """
-
-def find_json_files(path):
-    json_files = []
-    for root, dirs, files in os.walk(path):
-        for file in files:
-            if file.endswith(".json") and file != "dumpMetadata.json":
-                json_files.append(os.path.join(root, file))
-    return json_files
-
-"""
-Sets target value of key to source value.
-If source does not have key and target has key deletes the key from target.
-"""
-def replace_key_from_source(source_content, target_content, key):
-    if (source_content.get(key, None) is None):
-        if (target_content.get(key , None) is not None):
-            del target_content[key]
-    else:
-        target_content[key] = source_content[key]
- 
-
-def replace_json_content(source_content, target_content):
-    target_content["name"] = source_content["name"]
-    target_content["type"] = source_content["type"]
-    replace_key_from_source(source_content, target_content, "title")
-    replace_key_from_source(source_content, target_content, "description")
-    replace_key_from_source(source_content, target_content, "content")
-    replace_key_from_source(source_content, target_content, "ref")
-
-
-def print_list_of_files(list):
-    for f in list:
-        print(f"{os.path.basename(f)}", sep="\n")
-
-
-def print_list_of_tuples(list):
-    for target_file, source_file in list:
-        print(f"{os.path.basename(source_file)}", sep="\n")
-
 
 def remove_keys_from_content(json_file):
     del json_file["id"]
@@ -88,14 +50,14 @@ def process_common_files(common_files):
         # Check if content is wrapped by looking for dumpTime
         if "dumpTime" in dev_file_data:
             if "dumpTime" in dump_file_data:
-                replace_json_content(dump_file_data["content"], dev_file_data["content"])
+                script_utils.replace_json_content(dump_file_data["content"], dev_file_data["content"])
             else:
-                replace_json_content(dump_file_data, dev_file_data["content"])
+                script_utils.replace_json_content(dump_file_data, dev_file_data["content"])
         else:
             if "dumpTime" in dump_file_data:
-                replace_json_content(dump_file_data["content"], dev_file_data)
+                script_utils.replace_json_content(dump_file_data["content"], dev_file_data)
             else:
-                replace_json_content(dump_file_data, dev_file_data)
+                script_utils.replace_json_content(dump_file_data, dev_file_data)
 
         # Save processed file
         with open(dev_file, "w") as f:
@@ -136,8 +98,8 @@ if __name__ == "__main__":
     metadata_dev_branch_path_arg = sys.argv[1]
     metadata_dump_path_arg = sys.argv[2]
 
-    json_files_dev_paths = find_json_files(metadata_dev_branch_path_arg)
-    json_files_dump_paths = find_json_files(metadata_dump_path_arg)
+    json_files_dev_paths = script_utils.find_json_files(metadata_dev_branch_path_arg)
+    json_files_dump_paths = script_utils.find_json_files(metadata_dump_path_arg)
 
     print(f"JSON files in {metadata_dev_branch_path_arg}:")
     print(json_files_dev_paths)
