@@ -30,7 +30,7 @@ jobs:
         with:
           image: clevermaps/shell:beta
           options: --rm --name cm-shell --pull always --volume ${{ github.workspace }}/temp:/work:z -v ${{ github.workspace }}/temp/dumpscript.txt:/dumpscript.txt --env CM_ACCESS_TOKEN=${{ secrets.CM_ACCESS_TOKEN }} --user 1001:123
-          run: java -jar "${HOME}/${can_shell_filename}" --cmdfile /dumpscript.txt
+          run: /usr/local/bin/docker-entrypoint.sh --cmdfile /dumpscript.txt
           
       - name: Setup python environment
         uses: actions/setup-python@v4
@@ -45,5 +45,5 @@ jobs:
         with:
           image: clevermaps/shell:beta
           options: --rm --name cm-shell --pull always --volume ${{ github.workspace }}/temp:/work:z -v ${{ github.workspace }}/temp/loadscript.txt:/loadscript.txt --env CM_ACCESS_TOKEN=${{ secrets.CM_ACCESS_TOKEN }} --user 1001:123
-          run: java -jar "${HOME}/${can_shell_filename}" --cmdfile /loadscript.txt
+          run: /usr/local/bin/docker-entrypoint.sh --cmdfile /loadscript.txt
       
