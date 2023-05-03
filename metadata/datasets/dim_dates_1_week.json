@@ -17,6 +17,7 @@
         "ref": {
             "type": "dwh",
             "subtype": "date",
+            "table": "dim_dates_1_week_1",
             "primaryKey": "cz_week_id",
             "categorizable": false,
             "fullTextIndex": false,

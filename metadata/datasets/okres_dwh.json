@@ -37,6 +37,7 @@
                     "type": "areas"
                 }
             ],
+            "table": "okres_dwh_1",
             "primaryKey": "kod_okres",
             "categorizable": false,
             "fullTextIndex": true,

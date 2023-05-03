@@ -36,6 +36,7 @@
                     "type": "heatmap"
                 }
             ],
+            "table": "customers_1",
             "primaryKey": "customer_id",
             "categorizable": true,
             "fullTextIndex": false,

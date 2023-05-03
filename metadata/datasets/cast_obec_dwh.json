@@ -37,6 +37,7 @@
                     "type": "areas"
                 }
             ],
+            "table": "cast_obec_dwh_1",
             "primaryKey": "kod_cast_obec",
             "categorizable": false,
             "fullTextIndex": true,

@@ -12,6 +12,7 @@
         "ref": {
             "type": "dwh",
             "subtype": "basic",
+            "table": "transactions_1",
             "primaryKey": "transaction_id",
             "categorizable": true,
             "fullTextIndex": false,

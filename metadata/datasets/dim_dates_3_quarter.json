@@ -17,6 +17,7 @@
         "ref": {
             "type": "dwh",
             "subtype": "date",
+            "table": "dim_dates_3_quarter_1",
             "primaryKey": "quarter_id",
             "categorizable": false,
             "fullTextIndex": false,

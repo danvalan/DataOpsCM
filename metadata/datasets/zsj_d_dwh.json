@@ -32,6 +32,7 @@
             "type": "dwh",
             "subtype": "basic",
             "geometry": "zsjd-9n74cw",
+            "table": "zsj_d_dwh_1",
             "primaryKey": "kod_zsj_d",
             "categorizable": false,
             "fullTextIndex": false,

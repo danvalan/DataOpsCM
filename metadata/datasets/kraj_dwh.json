@@ -27,6 +27,7 @@
                     "type": "areas"
                 }
             ],
+            "table": "kraj_dwh_1",
             "primaryKey": "kod_kraj",
             "categorizable": false,
             "fullTextIndex": true,

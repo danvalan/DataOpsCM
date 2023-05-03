@@ -37,6 +37,7 @@
                     "type": "areas"
                 }
             ],
+            "table": "zsj_dwh_1",
             "primaryKey": "kod_zsj",
             "categorizable": false,
             "fullTextIndex": true,
