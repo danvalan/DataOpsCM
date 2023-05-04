@@ -22,7 +22,7 @@ jobs:
             cd temp
             echo -e "login\nopenProject --project ${project_id}\ndumpProject --skipData" > dumpscript.txt
             cat dumpscript.txt
-            echo -e "login\nopenProject --project ${project_id}\nrestoreMetadata\npushProject --skipData" > loadscript.txt
+            echo -e "login\nopenProject --project ${project_id}\nrestoreMetadata\naddMetadata\npushProject --skipData" > loadscript.txt
             cat loadscript.txt
             
       - name: Run docker CleverMaps Shell with dump script
