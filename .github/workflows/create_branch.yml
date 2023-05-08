@@ -41,7 +41,7 @@ jobs:
         if: "${{vars.CM_ORGANIZATION_ID != ''}}"
         run: | 
             cd temp
-            echo -e "login\ncreateProject --title \"${{inputs.projectName}}\" --organizationId ${{vars.CM_ORGANIZATION_ID}}\ndumpProject --skipData" > createProjectScript.txt
+            echo -e "login\ncreateProject --title \"${{inputs.projectName}}\" --organization ${{vars.CM_ORGANIZATION_ID}}\ndumpProject --skipData" > createProjectScript.txt
             cat createProjectScript.txt
             
       - name: Run docker CleverMaps Shell with create project script
