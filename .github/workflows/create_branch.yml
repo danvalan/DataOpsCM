@@ -97,7 +97,7 @@ jobs:
           response=$(curl -X POST \
             "https://secure.clevermaps.io/rest/projects/${{ env.NEW_PROJECT_ID }}/invitations" \
             -H "Content-Type: application/json" \
-            -H "Authorization: Bearer ${{ secrets.CM_ACCESS_TOKEN }}" \
+            -H "Authorization: Bearer ${{ steps.get-token.outputs.bearer_token }}" \
             -d "$invitation_payload" -v)
           
           echo "Invitation response: $response"
