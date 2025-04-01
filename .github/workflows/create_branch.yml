@@ -89,13 +89,16 @@ jobs:
             --arg email "${{ inputs.addUserWithEmail }}" \
             --arg role "ADMIN" \
             '{email: $email, role: $role}')
+
+          echo "Payload:"
+          echo "$invitation_payload"
           
           # Send the invitation request
           response=$(curl -X POST \
             "https://secure.clevermaps.io/rest/projects/${{ env.NEW_PROJECT_ID }}/invitations" \
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer ${{ secrets.CM_ACCESS_TOKEN }}" \
-            -d "$invitation_payload")
+            -d "$invitation_payload" -v)
           
           echo "Invitation response: $response"
 
